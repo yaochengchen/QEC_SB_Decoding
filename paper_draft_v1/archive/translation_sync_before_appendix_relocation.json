@@ -1,0 +1,56 @@
+{
+  "reviewed_on": "2026-10-31",
+  "scope": "Reviewed version fingerprints plus structural checks; not automatic semantic equivalence.",
+  "sections": {
+    "Abstract": {
+      "chinese_file": "ABSTRACT_ZH.md",
+      "english_sha256": "e74394e280ec557932ba3e9007296120895a6ba0873bba5df6655797a568b8e1",
+      "chinese_sha256": "8d343235d0e87cd567a611bee73bf4693f7a50fc7f15b5ad56d58f4017b9fdc9"
+    },
+    "I": {
+      "chinese_file": "INTRODUCTION_ZH.md",
+      "english_sha256": "7ea625b00214f30dd654cb6d83468620ef4158ee97984210039aa2d68491334c",
+      "chinese_sha256": "551af0c30c905c284564461cb025e66150345dc50ff68a235d885f5a5659aa25"
+    },
+    "II": {
+      "chinese_file": "SECTION_II_ZH.md",
+      "english_sha256": "a984033fb75e138f69ff7822be4aea8d35d6b9869c5e924925961ca2b3b8cedf",
+      "chinese_sha256": "e1843a69798753ec38041c440965d6253a7565860e3b7f9acf5374342af74d79"
+    },
+    "III": {
+      "chinese_file": "SECTION_III_ZH.md",
+      "english_sha256": "ba6523f414c2600eb05d90cdc2cc1b345c927457b069dad75b9c9b49fcce76e7",
+      "chinese_sha256": "e7c73d6eb855035ca4dd52c1b3645d1f0488501c41ed554d359734c1f2489eca"
+    },
+    "IV": {
+      "chinese_file": "SECTION_IV_ZH.md",
+      "english_sha256": "54f847c3700a983218be6910f986d1721ede803272092132a7b8ba57e1c14a53",
+      "chinese_sha256": "138ecc0d82937d14e3c66d958a6ad7ed68111d18e68dcaabd02ef75f01821e6d"
+    },
+    "V": {
+      "chinese_file": "SECTION_V_ZH.md",
+      "english_sha256": "56eb2c1ce9492b07c84cd1b309248cd022447d1d90b40291c22ecd82b96283b1",
+      "chinese_sha256": "992bc013143c75059190c778ee64589fb1a3b4ef0979aeee893bd4978cef1061"
+    },
+    "VI": {
+      "chinese_file": "SECTION_VI_ZH.md",
+      "english_sha256": "ec4c048604c08a88cd0ea435e2cd8abd2b0b44d023e236a1643ed5fb0c3ec707",
+      "chinese_sha256": "7137534797e2128b9e1611ae2d7029dcd908e2c698363112473777ac812ffd72"
+    },
+    "A": {
+      "chinese_file": "APPENDIX_A_ZH.md",
+      "english_sha256": "3f935d6d99dce749900ecc5fd6d3a4604cb400ad026ea2676d008790c8af3da1",
+      "chinese_sha256": "178670bc69baebcae5e1e96c9dec72a5def092d4b9ee0356357eb1dacf15750f"
+    },
+    "B": {
+      "chinese_file": "APPENDIX_B_ZH.md",
+      "english_sha256": "b08e3c99276227c863cfaab1fa8720624c7ce68af84fbb123ddc49090e5ead01",
+      "chinese_sha256": "b59acf36801be5ea1c58ddc78035f7cf10ca1f436a2b6ce885d98f3099698608"
+    },
+    "C": {
+      "chinese_file": "APPENDIX_C_ZH.md",
+      "english_sha256": "41af9646905b2d56b9d909c552ca6f2c3621ef70e2eccc98a1a175f776b87cac",
+      "chinese_sha256": "9fa24edac0d389194119ff4f467b6ed7f61d30fc83e7e711888cdc0f1a510d72"
+    }
+  }
+}

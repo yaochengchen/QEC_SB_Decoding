@@ -1,0 +1,1003 @@
+   Constraint-Preserving Simulated Bifurcation with Local Degeneracy
+
+        Aggregation: How Close to Maximum-Likelihood Surface-Code
+
+                                                            Decoding?
+
+                                                                                                         *
+                                     Yaocheng Chen and JiaPei [TODO: surname]
+
+
+                                                          October 18, 2026
+
+
+
+
+Abstract                                                                    Index Terms  Quantum error correction, surface code,
+                                                                            maximum-likelihood decoding, degeneracy, simulated bi-
+Maximum-likelihood (ML) decoding of a stabilizer code                       furcation, Ising machines, simulated annealing.
+selects the logical class with the largest total proba-
+bility, whereas Ising-machine decoders usually return a
+single minimum-weight conguration.             We study a de-              1      Introduction
+coder that separates the two tasks. A discrete simulated-
+bifurcation (SB) dynamics searches each logical class in                    A decoder for a stabilizer code receives a syndrome and
+stabilizer-generator coordinates, so that every state it vis-               must return a correction whose product with the actual
+its is syndrome-feasible, and a local stabilizer-orbit expan-               error is a stabilizer. Because many physical errors share
+sion (SOE) around the best candidate of each class esti-                    the same syndrome and dier only by stabilizers, the quan-
+mates the class probability. We benchmark the decoder on                    tity that determines success is the total probability of each
+the rotated surface code under code-capacity depolarizing                   logical class of errors, not the probability of any single er-
+noise against exact ML (d         = 3) and a matrix-product-                ror [1]. Maximum-likelihood decoding (MLD) chooses the
+state (MPS) near-ML reference. After xing the method                       class with the largest total probability; minimum-weight
+on a separate selection set, we evaluate it on a held-out                   decoding chooses the class containing the single most prob-
+                                                           6                able error. The two dier precisely when degeneracy mat-
+grid of 54 cells (d = 313, p = 0.040.18, 7.1 × 10            paired
+shots). The decoder beats minimum-weight perfect match-                     ters, and the dierence grows with the code distance d and
+ing and a correlated BP+OSD baseline in all 54 cells af-                    the physical error rate p.
+ter Holm correction.      For d   ≤ 9 its logical error rate is                 Exact MLD is #P-hard in general [2]. For the planar
+within 1.15× of the reference everywhere and statistically                  surface code, tensor-network contraction with a matrix-
+indistinguishable from it in 27 of the 36 cells.         With the           product-state (MPS) boundary [3] gives a controlled ap-
+search budget frozen at the value tuned for small codes,                    proximation that is essentially exact at moderate bond
+accuracy degrades at d ≥ 11 and the d = 11/13 crossing                      dimension; generalizations exist for two-dimensional local
+falls to p ≈ 0.11. Lengthening the bifurcation sweep four-                  codes [4, 5]. Monte Carlo methods estimate class proba-
+fold reduces the ratio to the reference to 1.071.23 and                    bilities by sampling [6, 7, 8, 9]. Matching [10, 11, 12] and
+moves the crossing to p ≈ 0.16 (reference: 0.175). A bud-                   belief propagation with ordered-statistics post-processing
+get study shows that the sweep length, not the number                       (BP+OSD) [13, 14] are fast but ignore part of the degener-
+of replicas, is the resource that must grow with d; that                    acy and, under depolarizing noise, the correlation between
+SB and a constraint-preserving simulated-annealing base-                    X and Z components.
+line reach the same accuracy plateau, SB with 0.30.6×                          A separate line of work maps decoding onto an Ising
+the search time; and that the remaining excess (at most                     problem solved by an annealer or an Ising machine [15, 16,
+13% at the largest budgets) is set by the locality of the                   17, 18]. Writing the error as a xed syndrome-compatible
+degeneracy estimate rather than by the search.             On this          seed times a product of stabilizer generators makes every
+planar benchmark the MPS decoder is faster at reference                     spin conguration syndrome-feasible [17, 18]; the objective
+accuracy; the proposed decoder requires only a stabilizer                   is then the Pauli weight, a low-order polynomial of the
+generator matrix, and the benchmark measures how far                        generator spins. These decoders return a minimum-weight
+such a generic decoder is from ML.                                          solution and therefore, by construction, do not perform
+                                                                            MLD.
+  * Y. Chen is with the Instituto de Astronomia, Geofísica e Ciências           Simulated bifurcation (SB) [19, 20] is a deterministic,
+Atmosféricas, Universidade de São Paulo, São Paulo, Brazil (e-mail:         synchronously updated dynamical system for Ising prob-
+yaochengchen@iag.usp.br).
+    JiaPei [TODO: aliation].                                              lems. Its update is a matrixvector-type operation applied
+
+     Y. Chen acknowledges support from FAPESP [TODO: grant                  to all variables and replicas at once, which makes it attrac-
+number].                                                                    tive for parallel hardware. To our knowledge SB has not
+
+
+
+                                                                        1
+been studied as a quantum decoder.                                       MLD returns arg maxL ZL ; minimum-weight (MAP) de-
+    In this paper we combine SB search in stabilizer coor-               coding returns the class of arg minL,u |e0 ⊕ ℓL ⊕ uG|. Re-
+dinates with a cheap estimate of each class's probability                cent work shows that for planar surface codes the two de-
+mass, and we ask how close the result comes to MLD as                    cisions already dier at error weight ⌈d/2⌉, i.e., at leading
+the code grows. Our contributions are:                                   order [21]; degeneracy is therefore not a high-p curiosity
+                                                                         on this code.
+ 1. A decoder (CP-SB + local SOE, Section 3) that runs
+      discrete SB on the exact Pauli-weight polynomial of
+      each logical class and then aggregates the probabil-               2.2 Near-ML decoders
+      ity of all errors within a small Hamming radius, in
+      generator space, of the best candidate of each class.              The MPS decoder of Bravyi, Suchara and Vargo contracts
+                                                                         the planar tensor network of Eq. (2) with bond dimen-
+ 2. A two-stage evaluation (Section 4) in which the
+                                                                         sion χ [3]; it is exact as χ → ∞ and in practice converges
+      method is xed on a selection set by a rule stated
+                                                                         at small χ. Markov-chain Monte Carlo over the stabilizer
+      in advance and then tested on a held-out 54-cell grid
+                                                                         group [6, 7], population annealing [8], worm algorithms [9],
+      (d   = 313) against exact MLD and an MPS refer-                   and annealed importance sampling with certicates [22]
+      ence, with paired tests against matching, correlated
+                                                                         estimate ZL or ratios of ZL .      Closest to our aggregation
+      BP+OSD,        and   a   constraint-preserving   simulated-
+                                                                         step, Liu et al. [23] recycle the candidates produced by
+      annealing (CP-SA) twin that shares everything but
+                                                                         a stochastic inner decoder into a truncated free energy
+      the search dynamics.
+                                                                         per class.    Our SOE diers in that it does not use the
+
+ 3. A decomposition of the remaining gap to ML (Sec-                     raw candidate pool as the sum: it enumerates a complete
+
+      tion 5): how much is due to the search (budget), how               Hamming ball in generator space around the single best
+
+      much to degeneracy that a minimum-weight decision                  candidate of each class (Section 3.4), which recovers de-
+
+      misses, and how much to the locality of the degener-               generate neighbors that the solver never visits.
+
+      acy estimate. In particular, the sweep length of the
+      bifurcation, not the number of parallel replicas, must
+      grow with d.
+                                                                         2.3 Ising-machine decoders
+                                                                         Fujisaki et al.     formulated surface-code decoding as a
+    We state the limits of the result up front.        All experi-
+                                                                         QUBO with syndrome penalties and solved it on a digital
+ments use code-capacity noise on the planar rotated sur-
+                                                                         annealer, including circuit-level noise [15, 16].    Takeuchi
+face code, where an MPS decoder gives reference-quality
+                                                                         et al. [17] and Takada et al. [18] replaced the penalty
+decisions at a cost comparable to ours on a CPU (Sec-
+                                                                         by stabilizer-generator variables, so that every congura-
+tion 5.5). We chose this benchmark because it is the set-
+                                                                         tion is feasible, and used simulated annealing [24].        We
+ting in which a near-exact reference exists for d up to 13,
+                                                                         adopt the same constraint-preserving coordinates; we do
+so that the distance to ML can be measured rather than
+                                                                         not claim them as new. What we add is SB as the search
+inferred. The value of the proposed decoder is that its two
+                                                                         dynamics, an explicit degeneracy-aware decision, and a
+ingredients need only a stabilizer generator matrix and
+                                                                         quantitative comparison with ML.
+a Pauli-weight oracle; testing it on codes without planar
+structure, and on hardware, is left to future work.
+
+                                                                         2.4 Simulated bifurcation
+2      Background and related work                                       SB integrates a classical Hamiltonian system whose posi-
+                                                                         tion variables undergo a pitchfork bifurcation as a control
+2.1 Degeneracy and maximum-likelihood parameter is ramped, so that their signs settle into a low-
+    decoding                          energy Ising conguration [19]. The ballistic and discrete
+
+            2n                                                           variants (bSB, dSB) add inelastic walls at |x| = 1; dSB
+Let e ∈ F2       denote an n-qubit Pauli error in binary sym-
+                                                                         evaluates the interaction on the signs of the positions [20].
+plectic form and      |e| its weight (number of non-identity
+                                                                         We use a dSB-type update with the exact multilinear force
+qubits).    Under depolarizing noise each qubit indepen-
+                                                                         of a higher-order (up to four-body) polynomial.
+dently suers X , Y , or Z with probability p/3 each, so
+
+                                            p/3
+                  Pr(e) ∝ w|e| ,      w=        .              (1)
+                                           1−p                           3       Method
+Given the syndrome s, choose any error e0 with syndrome
+s, and let ℓL (L = 0, . . . , 3) be representatives of the four          3.1 Code, noise and feasible seed
+                               m×2n
+logical cosets. With G ∈ F2           a generator matrix of the                                                                 2
+                                                                         We use the rotated surface code [25, 26] with n = d        data
+stabilizer group, the class-L probability is                                                  2
+                                                                         qubits and m = d         − 1 independent stabilizer generators
+                                                                             2
+                             X
+                ZL (s) =          w |e0 ⊕ℓL ⊕uG| .          (2)          ((d     − 1)/2 of each type), and code-capacity depolarizing
+                               u∈Fm                                      noise at rate p. A feasible correction e0 is obtained from
+                                  2
+
+
+
+
+                                                                     2
+                syndrome        feasible seed e0        4 class seeds                    restart (x ∼ U(−0.1, 0.1)), each with R replicas. The ter-
+                     s         (MWPM / GF(2))           eL = e0 ⊕ ℓL
+                                                                                         minal sign vectors, together with u = 0, form the candi-
+                                                                   per class L           date pool of the class. We denote a budget by R × S ; the
+                                local SOE:
+                                                u∗ CP-SB in generator                    frozen setting is 8×100 with ∆t = 0.45 and κ = 0.70, xed
+                              sum w |eL ⊕uG|     L
+L̂ = arg maxL ẐL
+                    (r)
+                                                   coordinates u ∈ Fm                    during earlier development on d ≤ 9. A decode therefore
+                                   over                              2
+                                                   R replicas × S steps
+                              dH (u, u∗
+                                      L) ≤ r                                             runs 4 × 2 × R trajectories of S steps.
+
+
+Figure 1:       Decoder pipeline.
+                                                          3.4 Local
+                                          Every state visited by the
+                                                                                                                 stabilizer-orbit                expansion
+                                                              (SOE)
+search is syndrome-feasible because the search runs in
+stabilizer-generator coordinates. The search supplies the
+                          ∗
+best candidate uL of each class; the local stabilizer-orbit                              Let u∗L be the lowest-energy candidate of class L. For
+expansion (SOE) supplies an estimate of the class proba-                                                                                   ∗
+                                                                                         radius r we enumerate the Hamming ball Br (uL ) = {u :
+bility ZL .                                                                                       ∗
+                                                                                         dH (u, uL ) ≤ r} in generator spaceall products of at most
+                                                                                         r generators applied to the best candidateand estimate
+minimum-weight perfect matching (MWPM) applied sep-                                             (r)
+                                                                                                        X                                 (r)
+                                                                                             ẐL =             wEL (u) ,   L̂ = arg max ẐL .    (7)
+arately to the X and Z components (any GF(2) solution                                                                                        L
+                                                                                                         u∈Br (u∗
+                                                                                                                L)
+would do); the four class seeds are eL = e0 ⊕ ℓL (Fig. 1).
+
+                                                                                          (r)
+3.2 Pauli-weight Hamiltonian in genera- local
+                                        ẐL is a lower bound on ZL that contains the dominant
+                                              degenerate neighbors of the best error. The ball has
+    tor coordinates                     1 + m states for r = 1 and 1 + m + m
+                                                                              
+                                                                            2 for r = 2 (169 and
+For class L every error is eL (u) = eL ⊕ uG with u ∈ F2 .
+                                                                            m            14,197 per class at d = 13). SOE needs no sampling and
+                              uj                                                         no tuning beyond r ; its cost is independent of the search
+With spins σj = (−1)               , the indicator that qubit q carries
+                                                                                         budget.       Heavier mass estimators that we tried earlier
+a non-identity Pauli is
+                                                                                         adaptive importance sampling and a Bennett acceptance-
+
+                ⊮[eq ̸= I] = 43 − 14 τqx − 14 τqz − 14 τqx τqz ,           (3)           ratio renementdid not improve on r = 2 on the held-out
+                                                                                         grid (median LER/LERREF 1.040 and 1.054 versus 1.039)
+       x                  (eL )x Q
+                                                                                         and are not discussed further.
+where τq  = (−1)         j∈X (q) σj and X (q) is the set of
+                               q
+
+
+generators whose X part acts on q (similarly for z ). Sum-
+ming over q gives the energy EL (σ) = |eL (u)| exactly, as a                             3.5 CP-SA twin
+multilinear polynomial. On the rotated surface code each
+qubit is touched by at most two generators of each type,                                 To separate the eect of the search dynamics from ev-
+
+so EL has terms of order at most four, and there is no                                   erything else, we use a constraint-preserving simulated-
+                                                                           |e|           annealing twin (CP-SA) that shares the seeds, the Hamil-
+penalty term and no auxiliary spin. Because Pr(e) ∝ w                            ,
+minimizing EL is MAP decoding within class L.                                            tonian, the pool construction and the SOE step. It per-
+                                                                                         forms single-generator Metropolis ips with a geometric
+
+3.3 Constraint-preserving SB (CP-SB)                                                     temperature schedule from 2.0 to 0.05 over W sweeps, with
+                                                      C chains for each of the warm and random modes; we de-
+For each class we evolve R replicas of positions x ∈  note its budget by C × W (grid setting 8 × 100).
+       m                  m
+[−1, 1] and momenta y ∈ R for S steps:
+
+                                                      4     Experimental protocol
+                                             
+         y ← y + ∆t −(1 − ak ) x + c f (sgn x) ,  (4)
+
+              x ← x + ∆t y,                                                (5)
+                                                                                         4.1 Two-stage design
+followed by inelastic walls (xj ← sgn xj , yj ← 0 whenever
+                                                                                         Selection set. 12,000 shots at d = 5, 7, 9 and p = 0.10, 0.12
+|xj | > 1). The control parameter ramps linearly, ak =
+                                                                                         (3000, 2000 and 1000 shots per cell). Before the held-out
+(k + 1)/S . The force is the exact negative gradient of the
+                                                                                         data existed we xed the rule: the main decoder is CP-SB
+multilinear energy at the sign vertex, which we compute
+                                                                                         + SOE with r = 1, replaced by r = 2 only if r = 2 has
+from single-generator ip energies:
+                                                                                         strictly fewer failures pooled over the selection set and an
+                   ∂EL                                                                   exact paired McNemar test gives p < 0.05. Radius 2 won
+                       = 12 σj EL (σ (j) ) − EL (σ) ,
+                                                  
+        fj (σ) = −                                                         (6)
+                   ∂σj                                                                   (70 shots corrected that r = 1 missed versus 40 the other
+                                                                                         way, p = 0.0054), so the main decoder is           CP-SB 8 × 100
+where σ
+          (j)
+                 is σ with spin j ipped. The coupling is nor-                           + SOE r = 2        .
+malized per class, c = κ/ maxj Bj with Bj the ℓ1 norm                                      Held-out grid.        54 cells, d ∈ {3, 5, 7, 9, 11, 13},
+of the coecients of all monomials containing                       j.   Each            p ∈ {0.04, 0.05, 0.06, 0.08, 0.10, 0.12, 0.14, 0.16, 0.18}, with
+class receives one warm restart, initialized near the seed                               seeds disjoint from the selection set. Shots per cell range
+(x   = 0.08 + N (0, 0.012 ), i.e., u = 0), and one random                                from 10
+                                                                                                   4
+                                                                                                       (p ≥ 0.14) to 10
+                                                                                                                          6
+                                                                                                                              (d ≥ 11, p = 0.04), 7.12×10
+                                                                                                                                                            6
+                                                                                                                                                                in
+
+
+
+                                                                                     3
+total; every decoder decodes the same shots, so all compar-
+                                                                  Table 1: LER/LERREF on the held-out grid (selected cells;
+isons are paired. The full per-cell table is in Appendix A.
+                                                                                                                    ∗
+                                                                  all 54 in Appendix A). REF in percent.                : signicantly
+                                                                  worse than REF (Holm p < 0.05). The last column is the
+4.2 Baselines                                                     budget-scaled 8 × 400 row (Section 5.3).
+
+(i) MWPM on the X and Z components with unit weights;              d    p REF (%) MWPM BP+OSDc SA+SOE1 SB+SOE2 SB400 +SOE2
+
+PyMatching [11] with      p-dependent weights gave identi-         3 0.08    6.99    1.13         1.05     1.00         1.01         
+                                                                   3 0.12    13.8    1.11         1.05     1.00         1.01         
+cal predictions on every grid shot, and we report them             3 0.16    21.8    1.09         1.04     0.99         0.99         
+together.   (ii) BP+OSD-CS [13, 14] (order 7, min-sum,             5 0.08    3.74    1.51         1.23     1.02         1.02         
+                                                                   5 0.12    10.9    1.34         1.16     1.03         1.01         
+ldpc [27]), rst on the X and Z components separately              5 0.16    20.8    1.25         1.13     1.02         1.00         
+with prior 2p/3, and (iii) a correlated version on the ma-
+      HZ 0 HZ                                                    7 0.08    1.94    2.04         1.53     1.04       1.04           
+trix    0 HX HX whose three column blocks are the X , Z            7 0.12    7.74    1.71         1.44     1.07      1.06∗           
+                                                                   7 0.16    18.7    1.46         1.34     1.07      1.06∗           
+and Y components, each with prior p/3 and 3n iterations.
+                                                                   9 0.08    0.94    2.82         2.00     1.03       1.01           
+The correlated version is better than the independent one
+                                                                   9 0.12    6.08    2.02         1.66     1.09      1.08∗           
+in all 54 cells (Holm p   ≤ 0.0014; at d = 13, p = 0.10            9 0.16    17.3    1.62         1.46     1.09      1.10∗           
+its LER/LERREF is 2.67 instead of 5.14), so it is the BP          11 0.08    0.50    3.97         2.68     1.07      1.20∗       1.10∗
+                                                                  11 0.12    4.28    2.55         2.18     1.14      1.28∗       1.12∗
+baseline we report. (iv) CP-SA with the same SOE.                 11 0.16    16.3    1.73         1.60     1.11      1.22∗       1.10∗
+                                                                  13 0.08    0.23    5.74         3.99     1.23      1.87∗        1.07
+4.3 Reference and its validation                                  13 0.12
+                                                                  13 0.16
+                                                                             3.12
+                                                                             15.1
+                                                                                     3.28
+                                                                                     1.93
+                                                                                                  2.65
+                                                                                                  1.88
+                                                                                                           1.25
+                                                                                                           1.25
+                                                                                                                     1.82∗
+                                                                                                                     1.54∗
+                                                                                                                                 1.18∗
+                                                                                                                                 1.19∗
+
+The reference (REF) is exact MLD at d = 3 (enumeration
+        8
+of the 2    stabilizer group per class), MPS with χ = 32
+                                                                  congurations. The 8 × 100 congurations reproduce the
+for d = 59 [3, 28], and MPS with χ = 16 for d = 11, 13,
+                                                                  grid decisions shot by shot. From this study we then xed
+replaced by χ = 32 on every hard shot (any decoder wrong
+                                                                  a single rulekeep R = 8 and use S = 400 for d ≥ 11
+or disagreeing with χ = 16; up to 3000 per cell). Checks:
+                                                                  and applied it to the full grid cells at d = 11, 13 (all shots
+at d  = 3 the MPS decisions agree with exact MLD on                                           5
+                                                                  for p ≥ 0.08, the rst 10       shots for p ≤ 0.06). Because the
+100% of non-tied syndromes (4695 and 4610 shots at p =
+                                                                  rule was chosen after the budget study, and at p ≥ 0.14 the
+0.10, 0.12). On the grid, χ = 16 and χ = 32 disagree on
+                                                                  study used the same shots, we present these budget-scaled
+at most 7 shots per cell at d = 9 and at most 2 hard shots
+                                                                  rows as a budget study next to the frozen held-out rows,
+per cell at d ≥ 11; on the d ≥ 11 hard shots χ = 32 and
+                                                                  not as an independent conrmation.
+χ = 64 disagree on at most 1 shot per cell (18 cells, 401
+3000 shots each). At d = 5 the χ = 16/32 disagreements
+are more frequent (67188 per cell), but they are near-ties       4.6 Timing
+and vanish at larger d; we use χ = 32 there.
+                                                                  Times are single-process CPU wall times per unique non-
+                                                                  trivial syndrome on an otherwise idle node ([TODO: CPU
+4.4 Metrics and statistics                                        model];   Python 3.11,      NumPy 2.4),         medians over 100
+                                                                  unique syndromes at p = 0.10 for d ≥ 7, for every decoder
+We report the logical error rate (LER) with Wilson 95%
+                                                                  and budget conguration. A second timing run at p = 0.14
+intervals, the ratio LER/LERREF , and the gap closure rel-
+                                                                  gives medians within a few percent of those at p = 0.10 for
+ative to MWPM,
+                                                                  every conguration. Our implementation is unoptimized
+                     LERMWPM − LERX                               NumPy; PyMatching is compiled C++; the MPS decoder
+                 G=                  ,                  (8)
+                    LERMWPM − LERREF                              is the Python implementation in qecsim [28]. Times there-
+                                                                  fore describe this benchmark, not hardware limits.
+with a paired bootstrap interval. Paired comparisons use
+the exact two-sided McNemar (sign) test on discordant
+shots, Holm-corrected across all cells of a comparison fam-       5    Results
+ily. Where per-cell tests are underpowered we also report
+the discordant counts pooled over cells with an exact sign        5.1 Comparison                   with      matching            and
+test; we treat these pooled tests as descriptive.
+                                                                      BP+OSD
+4.5 Budget study and budget-scaled rows The main decoder  has  a  lower    LER than
+                                        MWPM/PyMatching and than correlated BP+OSD
+                 4
+On the rst 10   shots of every cell with d ∈ {9, 11, 13} and in all 54 cells, each signicant after Holm correction
+p = 0.080.16 we decoded with CP-SB budgets R × S ∈ (largest Holm p: 8.7 × 10−12 against MWPM, 0.0077
+{8×100, 16×100, 32×100, 64×100, 8×200, 8×400, 32×400} against correlated BP+OSD). Pooled over the grid,
+and CP-SA budgets C × W ∈ {8 × 25, 8 × 50, 8 × 100, 8 ×       it corrects 55,081 shots that MWPM fails on versus
+200, 16 × 100, 32 × 200}, each with MAP, SOE r = 1 and 17,007 in the opposite direction, and 41,739 versus 21,099
+SOE r = 2 decisions; at p = 0.18 we ran ve of these          against correlated BP+OSD. The margins grow with d
+
+
+
+                                                              4
+      MWPM / PyMatching                   BP+OSD (correlated)         CP-SA 8x100 + SOE r1            CP-SB 8x100 + SOE r2 (frozen)        CP-SB 8x400 + SOE r2 (d ≥ 11)
+
+
+
+                                           d=3                                             d=5                                           d=7
+
+                    10.0
+     LER / LERREF
+
+
+
+
+                    5.0
+
+                    3.0
+                    2.0
+                    1.5
+                     1.0
+
+
+                                           d=9                                             d = 11                                        d = 13
+
+                    10.0
+     LER / LERREF
+
+
+
+
+                    5.0
+
+                    3.0
+                    2.0
+                    1.5
+                     1.0
+
+                           0.05          0.10           0.15               0.05         0.10           0.15               0.05          0.10          0.15
+                                   physical error rate p                          physical error rate p                           physical error rate p
+
+
+Figure 2: Logical error rate relative to the reference on the held-out grid. Dotted line: reference (exact MLD at d = 3,
+MPS otherwise). Dashed: the budget-scaled CP-SB 8 × 400 + SOE r = 2 at d ≥ 11 (Section 5.3). At d = 11, 13 and
+p ≤ 0.06 the reference has fewer than 100 failures per cell and the ratios are noisy.
+
+
+(Fig. 2, Table 1):                 at    d = 13, MWPM is 1.612× and                       ior.     With 8 × 100, LER(d = 13) exceeds LER(d = 11)
+correlated BP+OSD                       1.66.5× the reference, compared                   from p = 0.12 on (5.69% vs 5.48%), a crossing at p ≈ 0.11;
+with 1.31.9× for our frozen decoder.                           Beating MWPM               the reference curves for d = 11 and 13 cross at p ≈ 0.175
+under               depolarizing    noise       is   expected   of   any    decoder        (Fig. 3).
+that uses the X Z correlation; the correlated BP+OSD
+comparison is the more informative one. No decoder lost
+eective distance:                 across the grid there is no failure of
+                                                                                           5.3 Scaling the search budget
+weight below                ⌈d/2⌉ except for independent BP+OSD                            Budget-scaled rows. Raising the number of SB steps from
+(13 failures per cell at d = 9, 11, p ≤ 0.06).                                            100 to 400 at d ≥ 11 (replicas unchanged) lowers the LER
+                                                                                           in all 18 cells relative to the frozen decoder, signicantly
+
+5.2 Gap to ML at xed budget                                                               in 12 (Holm), all at d    = 11, p ≥ 0.10 or d = 13, p ≥
+                                                                                           0.06; pooled, it corrects 6,429 shots that the frozen decoder
+For d ≤ 9 the frozen decoder is close to the reference:                                    fails on versus 3,487. For p ≥ 0.08, LER/LERREF falls
+LER/LERREF lies in 0.991.01 at d = 3, 1.001.04 at                                        from 1.201.33 to 1.091.12 at d = 11 and from 1.381.87
+d = 5, 1.011.06 at d = 7 and 1.011.15 at d = 9; the                                      to 1.071.23 at d = 13 (Table 1, dashed lines in Fig. 2).
+gap closure is at least 0.85 for d ≤ 7 and at least 0.80 at                                The budget-scaled rows remain signicantly worse than
+d = 9. Across all 54 cells the paired test against the refer-                              the reference in 10 of 18 cells (d = 11, p ≥ 0.08; d = 13,
+ence is not signicant in 30 cells; the 24 signicant cells (all                           p ≥ 0.12), by 923%.
+in the direction of a higher LER for our decoder) are dis-                                    Threshold. With 8 × 400 the d = 11/13 crossing moves
+tributed as 0, 1, 2, 6, 7, 8 over d = 3, . . . , 13. At d = 11, 13                         from p ≈ 0.11 to p ≈ 0.16 (LER at p = 0.16: 17.95% vs
+the frozen decoder degrades (LER/LERREF up to 1.33 and                                     18.07%). In the budget study, CP-SB 32×400 and CP-SA
+1.87), while the CP-SA twin at the same nominal budget                                     32 × 200 give LERs that decrease monotonically with d up
+stays at 1.061.14 and 0.901.30; CP-SA + SOE r = 1 is                                     to p = 0.16 (CP-SB 32 × 400 at p = 0.16: 18.68, 17.68,
+signicantly better than CP-SB + SOE r = 1 in 15 cells,                                    16.72% for d = 9, 11, 13) and cross between 0.16 and 0.18
+all of them at d = 11 (p ≥ 0.06) or d = 13 (p ≥ 0.05),                                     (p ≈ 0.17), approaching the reference value ≈ 0.175. The
+and never the reverse. As the next subsection shows, this                                  low crossing of the frozen decoder is therefore a property
+dierence is a matter of search time: on an idle core, the                                 of a budget that does not grow with dCP-SA 8×100 also
+frozen SB search at d = 13 takes 0.45 s per syndrome and                                   crosses early, between p = 0.14 and 0.16and not a limit
+the CP-SA search 2.77 s.                                                                   of the method.         These nite-size crossings lie below the
+  The frozen budget also suppresses the threshold behav-                                   asymptotic optimal threshold of ≈ 0.189 [29], as expected
+
+
+
+                                                                                       5
+                                   (a) CP-SB 8x100 + SOE r2, frozen         (b) steps 400 for d ≥ 11               (c) reference (MLD / MPS)
+
+                                                                                                                                                           p
+                     10−1                                                                                                                                   0.04
+                                                                                                                                                            0.05
+logical error rate
+
+
+
+
+                          −2                                                                                                                                0.06
+                     10
+                                                                                                                                                            0.08
+                                                                                                                                                            0.10
+                          −3
+                     10
+                                                                                                                                                            0.12
+                                                                                                                                                            0.14
+                     10−4                                                                                                                                   0.16
+                                                                                                                                                            0.18
+
+
+                               3        5      7      9       11   13   3   5      7         9     11    13    3     5      7       9      11   13
+                                            code distance d                     code distance d                          code distance d
+
+
+Figure 3: Logical error rate versus d for each p. (a) Frozen budget CP-SB 8 × 100 + SOE r = 2 at every d. (b) Same
+decoder with S = 400 steps for d ≥ 11. (c) Reference. With the frozen budget the curves turn upward at d = 13
+already at p ≈ 0.12; with the longer sweep they decrease with d up to p = 0.14.
+
+
+
+at d ≤ 13.                                                                                   budget.    With a sucient budget all searches return the
+                 Steps versus replicas. At equal search time the longer                      same minimum-weight decision: at d = 13, p = 0.12 the
+sweep is better. At d = 13, CP-SB 8 × 400 (1.74 s) and                                       MAP ratio is 1.371.38 for CP-SA 8×200, 16×100, 32×200
+32×100 (1.66 s) give LER/LERREF (SOE r = 2, p = 0.10                                        and CP-SB 32 × 400. The remaining MAP excess is there-
+0.16) of 1.10, 1.17, 1.23, 1.19 and 1.23, 1.28, 1.33, 1.29;                                  fore not a search failure but degeneracy: the most probable
+pooled over the 15 study cells, 8 × 400 corrects 1,935 shots                                 single error lies in the wrong class. SOE recovers most of
+                                                         −6                                  itin the same cell SOE r = 2 lowers the ratio from 1.38
+that 32 × 100 fails on versus 1,643 (sign test p ≈ 10       ;
+one cell signicant on its own). 64 × 100, at about twice                                    to 1.10and the share it recovers grows with d.
+the time (3.28 s), only matches 8 × 400 (1,469 vs 1,500).                                        Radius 2 is better than radius 1 by a small, consistent
+Replicas are independent samples of the same quench: if                                      margin.    On the grid only 3 of 54 cells are individually
+the bifurcation is traversed too quickly for a given m, more                                 signicant, but 50 of 54 point the same way, and pooled
+replicas reproduce the same bias. A longer ramp lets the                                     over the grid r = 2 corrects 5,222 shots that r = 1 misses
+                                                                                                                           −19
+positions follow the slow bifurcation and settle into lower-                                 versus 4,337 (p = 1.5 × 10          ). At d = 3, where r = 1 is
+energy sign patterns (Fig. 4, top).                                                          already essentially MLD, the two are tied (1,893 vs 1,882);
+                                                                                                                                                −3
+                 SB versus SA. When the decision rule is held xed, the                      every d ≥ 5 is signicant on its own (p < 10            ). With the
+two searches converge to the same accuracy. Comparing                                        8 × 400 search the picture is the same (0/18 cells, 12/18
+budgets of similar accuracy, CP-SB 8 × 400 versus CP-                                        in favor, pooled 569 vs 376).
+SA 8 × 100 and CP-SB 32 × 400 versus CP-SA 32 × 200,                                             At the largest budgets the ratio to the reference levels
+none of the 18 cells is signicant for any of MAP, SOE                                       o independently of the search: SOE r = 2 gives 1.051.08
+r = 1 or SOE r = 2, and the pooled discordant counts are at d = 9, 1.001.11 at d = 11 and 1.081.13 at d = 13 for
+balanced (SOE r = 2: 3,169 vs 3,048 and 1,134 vs 1,200).   p ≥ 0.10, for both CP-SB 32 × 400 and CP-SA 32 × 200.
+The SB searches take 1.74 and 6.55 s at d = 13, versus This plateau is the error of the local estimate (7) itself: the
+2.77 and 22.0 s for SA, i.e., 0.63× and 0.30×. The budget- ball around a single center misses degenerate errors that
+scaled main decoder (8 × 400, r = 2) is not signicantly dier from it by larger stabilizer products and the mass
+dierent from the grid's CP-SA 8 × 100 + SOE r = 1         around other near-optimal centers. More search does not
+in any of the 18 full cells either (pooled 3,265 vs 2,914, remove it; a larger or adaptive orbit would.
+a small edge for SB). At low budget SB is clearly better:
+CP-SB 8 × 100 against CP-SA 8 × 25 (search times 0.45
+and 0.71 s at d = 13) is signicant in 8 of 15 cells for SOE
+                                                                                             5.5 Cost
+r = 1, pooled 6,124 vs 3,867. We therefore claim the same                                    Table 2 lists per-syndrome times. Two points matter for
+accuracy plateau at a smaller search time, not a better
+                                                                                             interpreting the results. First, at d ≥ 11 the SOE r = 2
+plateau.                                                                                                                     2
+                                                                                             step, whose cost grows as m , is more expensive than the
+                                                                                             search: at d = 13 it takes 3.5 s against 1.7 s for the 8 × 400
+
+5.4 Where the remaining gap comes from search. Once the search is adequate, r = 2 buys a 1
+                                                                                             3% relative improvement over r = 1 at d = 13 for about
+Figure 5 decomposes the gap into search and degener-                                         3.5 s, whereas the same time spent on SB steps buys much
+acy. The MAP decision (lowest-weight candidate over all                                      more (Fig. 4, bottom). The cost-eective conguration at
+classes) is 1.041.12× the reference at d = 3 and rises to                                   d ≥ 11 is therefore a longer SB sweep with r = 1 (1.8 s end
+1.21.5× at d = 9 and 1.42.7× at d = 13 with the frozen                                     to end at d = 13); r = 2 remains the accuracy headline
+
+
+
+                                                                                         6
+                             (a1) d=13, p=0.12: SOE r1 vs search time                                        (a2) d=13, p=0.16: SOE r1 vs search time
+               3.00
+                                                                                                                                     SB: steps 100 → 400 (8 rep.)
+                                                                                                                                     SB: replicas 8 → 64 (100 steps)
+                                                                                                                                     SB 32x400
+LER / LERREF
+
+
+
+
+               2.00                                                                                                                  SA: sweeps 25 → 200 (8 chains)
+                                                                                                                                     SA 16x100, 32x200
+
+               1.50
+
+               1.25
+
+
+               1.00
+
+                                100                                      101                                    100                                101
+                               search time per syndrome (s, 1 core)                                            search time per syndrome (s, 1 core)
+
+                                (b1) d=13, p=0.12: end-to-end time                                              (b2) d=13, p=0.16: end-to-end time
+               3.00
+                                                                                                                                         CP-SB 8x400 (r1 → r2)
+                                                                                                                                         CP-SB 32x400 (r1 → r2)
+                                                                                                                                         CP-SA 8x100 (r1 → r2)
+LER / LERREF
+
+
+
+
+               2.00                                                                                                                      CP-SA 32x200 (r1 → r2)
+                                                                                                                                         MPS χ=16 (reference class)
+                                                                                                                                         BP+OSD (correlated)
+               1.50
+
+               1.25
+
+
+               1.00
+
+                      10−2             10−1               100                  101                    10−2             10−1           100                101
+                             end-to-end time per syndrome (s, 1 core)                                        end-to-end time per syndrome (s, 1 core)
+
+
+Figure 4: Budget study at d = 13.                    Top: SOE r = 1 accuracy versus search time per syndrome for CP-SB (blue)
+and CP-SA (orange); solid lines increase the number of steps (sweeps), dotted lines the number of replicas. Bottom:
+accuracy versus end-to-end time (seed + search + SOE) with r = 1 and r = 2 joined by a line; star: MPS χ = 16;
+diamond: correlated BP+OSD. Times are from the budget-study timing run at p = 0.10.
+
+
+
+                                                                                            not dominate MPS on a planar code in accuracy or in
+Table 2: Median single-core time per unique non-trivial
+                                                                                            CPU time, and we do not claim it does. MPS contraction
+syndrome at p = 0.10 (seconds). 100 syndromes per entry.
+                                                                                            relies on the planar two-dimensional structure of the code;
+Unoptimized Python/NumPy except PyMatching (C++)
+                                                                                            the two components of our decoder use only the generator
+and BP+OSD (Cython).                    End-to-end times include the
+                                                                                            matrix   G and the Pauli weight, and the dynamics is a
+MWPM seed.
+                                                                                            synchronous update of all replicas and variables suited to
+                                                  d=9           d = 11         d = 13
+                                                                                            parallel hardware.        Neither of these properties is tested
+   PyMatching                                 2.7 × 10−5 3.3 × 10−5 4.3 × 10−5
+   BP+OSD, correlated                              0.0011     0.0025     0.0050             here (Section 6).
+   MPS χ = 16                                       0.164      0.326      0.540
+   MPS χ = 32                                       0.659      1.711      3.269
+   CP-SB search 8 × 100
+   CP-SB search 8 × 400
+                                                  0.133
+                                                  0.511
+                                                                 0.250
+                                                                 0.968
+                                                                                0.446
+                                                                                1.736
+                                                                                            5.6 Reproducibility across solver seeds
+   CP-SB search 32 × 400                          1.768          3.552          6.554
+                                                                                            Three independent solver seeds for CP-SB 8×100 and CP-
+   CP-SA search 8 × 100                           1.317          1.980          2.765
+                                                                                                                                                                       4
+   CP-SA search 32 × 200                          10.49          15.68          22.02       SA 8 × 100 (SOE r = 1; d = 9, 11, 13; p = 0.10, 0.14; 10
+   SOE r = 1                                      0.007          0.017          0.040
+                                                                                            shots each) give LERs within 0.060.54 percentage points
+   SOE r = 2                                      0.258          1.061          3.524
+                                                                                            of each other.      The fraction of shots on which all three
+   End to end: 8 × 100 + SOE r = 2 (frozen)       0.393          1.316          3.980
+   End to end: 8 × 400 + SOE r = 1                0.520          0.989          1.781       seeds agree is 0.870.99 for CP-SB and 0.900.99 for CP-
+   End to end: 8 × 400 + SOE r = 2                0.771          2.033          5.267
+                                                                                            SA; the lower agreement of the frozen SB search at d = 13,
+                                                                                            p = 0.14 (0.865 vs 0.905) is another sign that 8 × 100 does
+                                                                                            not converge there.
+because it was selected in advance.
+  Second, on this benchmark the MPS decoder with χ =
+16 reaches reference accuracy in 0.54 s at d = 13, about 6     Discussion
+the time of our frozen search alone and 310× faster than
+our budget-scaled pipeline (1.78 s with r = 1, 5.27 s with What the benchmark shows. On the one code family where
+r = 2); even with χ = 32 it takes 3.3 s. Our decoder does near-exact ML decisions are available up to d = 13, a de-
+
+
+                                                                                        7
+                MAP (search only), 8x100       + SOE r1, 8x100        + SOE r2, 8x100         MAP, 8x400         + SOE r1, 8x400         + SOE r2, 8x400
+
+
+                                      d=3                                            d=5                                           d=7
+               3.0
+LER / LERREF
+
+
+
+
+               2.0
+
+               1.5
+
+
+               1.0
+
+
+
+
+                                      d=9                                            d = 11                                    d = 13
+               3.0
+LER / LERREF
+
+
+
+
+               2.0
+
+               1.5
+
+
+               1.0
+
+
+
+                     0.050 0.075 0.100 0.125 0.150        0.175    0.050 0.075 0.100 0.125 0.150     0.175      0.050 0.075 0.100 0.125 0.150     0.175
+                              physical error rate p                       physical error rate p                         physical error rate p
+
+
+Figure 5: Gap decomposition on the held-out grid: minimum-weight decision of the search (MAP), plus SOE r = 1,
+plus SOE r = 2, all relative to the reference. Solid: frozen 8 × 100 search. Dashed, open markers (d ≥ 11):                                     8 × 400
+search. The distance between MAP and SOE is the degeneracy that a minimum-weight decoder misses; the distance
+between SOE r = 2 and 1 is the error of the local mass estimate.
+
+
+
+coder made of a generic Ising search and a local degeneracy                          local SOE is the cheapest such estimate, needs no tuning,
+estimate comes within 1.15× of ML for d ≤ 9 and within                               and, as Section 5.4 shows, already accounts for most of the
+1.071.23× at d = 11, 13 once its search budget grows with                           degeneracy on this code.
+d. It beats correlated BP+OSD everywhere. The remain-
+ing excess separates cleanly into three parts: an undersized                            Beyond code capacity. The constraint-preserving coor-
+search budget (removed by longer SB sweeps), degeneracy                              dinates need a generating set of the group of fault con-
+
+that a minimum-weight decision misses (mostly recovered                              gurations that leave every detector and logical observ-
+
+by SOE), and the locality of SOE (a plateau of up to 13%                             able unchanged.       Under circuit-level noise this group is
+
+that no amount of search removes).                                                   the kernel of the stacked detector and observable matrices
+                                                                                     of the detector error model (DEM), and the question is
+          The resource that must scale. The number of SB steps,
+                                                                                     whether it has a local generating set, so that the energy
+not the number of replicas, has to grow with d. In stabi-
+                                                                                     remains a low-order polynomial.        We checked this struc-
+lizer coordinates the energy landscape is a frustrated, up-
+                                                      2                              tural precondition, without decoding, for rotated surface-
+to-four-body Ising model on m = d                         − 1 spins whose low-
+                                                                                     code memory experiments with d          = 313 and d rounds
+energy states are separated by stabilizer moves of growing
+                                                                                     and for the [[72, 12, 6]] bivariate-bicycle (BB) code with
+size; a ramp that is fast compared with the slowest bifur-
+                                                                                     its depth-8 syndrome cycle [30] and 6 rounds, at p = 0.003
+cating mode leaves every replica with the same residual
+                                                                                     (Appendix C). Generators are found by decoding each
+defects. A practical rule is to keep a small replica count
+                                                                                     fault mechanism's own detector pattern with that mecha-
+and lengthen the sweep.                    For SA the analogous resource
+                                                                                     nism excluded, followed by a greedy GF(2) basis; any rank
+is the number of sweeps; at equal accuracy SB needs 0.3
+                                                                                     decit is lled from the global null space and reported sep-
+0.6× the search time of SA in our implementation.
+                                                                                     arately. For the surface code the self-decoded generators
+          Relation to MPS and to sampling decoders. For the pla-                     have weight 3 at the median and at most 4 at the 99th
+nar surface code an MPS decoder is the natural choice:                               percentile for every d, and only 0, 4, 6, 6, 13, 14 completion
+it is near-exact at modest χ and, in our CPU implemen-                               elements are needed for d = 3, . . . , 13; at d = 13, 11 of
+tation, faster.              Our results should be read as a measure-                the 14 are time-like elements that run through (nearly) all
+ment of how much accuracy a code-agnostic optimize-then-                             rounds, with weights up to 57, among 39,724 generators.
+aggregate decoder loses relative to ML, and of where that                            Each fault mechanism is acted on by            2.9 generators on
+loss comes from. Sampling estimators of ZL [7, 8, 9, 22]                             average (≤ 16 at the 99th percentile), which is the order
+and truncated free energies [23] target the same quantity;                           of the corresponding energy term.        For the BB code the
+
+
+
+                                                                                 8
+self-decoded generators are equally local (99th-percentile          A       Full held-out grid
+weight 4), but 261 completion elements (1.7%, weights up
+to 104, only greedily lightened) are needed.     The search         Table 3 lists every cell. Columns as in Table 1; addition-
+space thus stays local at circuit level apart from a small          ally the minimum-weight decision of the frozen search (SB
+set of global elements, which grows slowly with d for the           MAP), SOE r         = 1 (SB+SOE1 ), and the gap closure G
+surface code and must be treated separately; we have not            of the main decoder.            For the budget-scaled column at
+evaluated decoding accuracy in this setting.                        p ≤ 0.06 the ratio is computed on the decoded subset (105
+                                                                    shots).
+    Limitations.    (i) Decoding accuracy is measured for
+code-capacity depolarizing noise on the planar rotated sur-
+face code only; for circuit-level noise we verify only the
+structural precondition above. (ii) The budget-scaled rows          B       Budget study at d = 13
+use a rule chosen after the budget study on overlapping
+                                                                                                                            4
+                                                                    At p = 0.08 the reference has only 16 failures in 10        shots,
+shots (Section 4.5); the frozen rows are the held-out result.
+                                                                    so that column is coarse.
+(iii) At d ≥ 11 and p ≤ 0.06 the reference has few failures
+per cell (282 on the decoded subsets), so the ratios there
+are imprecise. (iv) The reference at d ≥ 5 is MPS, not ex-
+act MLD; the convergence checks above bound, but do not
+                                                                    C       Locality of the circuit-level sta-
+eliminate, its error. (v) Timing is single-core Python and                  bilizer group
+should not be used to compare against optimized or hard-
+ware implementations. (vi) We did not test codes without            Circuits:          rotated_memory_z for the sur-
+                                                                                     Stim   [31]
+planar structure.                                                   face      code    after_clifford_depolarization,
+                                                                                       with
+    Outlook. Three directions follow directly from the de-          before_round_data_depolarization,
+composition: an SOE whose radius or set of centers adapts           before_measure_flip_probability              and
+to the ambiguity of the decision, which targets the plateau;        after_reset_flip_probability all equal to p; for
+a parallel implementation of the synchronous SB update,             the BB code, the depth-8 cycle of Ref. [30] with two-
+which targets the search time; and circuit-level noise or           qubit depolarizing noise after every CNOT, single-qubit
+codes for which no tensor-network reference is ecient,             depolarizing noise on idle data qubits in every layer and
+where the generic formulation is the point and where the            on data qubits before each round, and ips after reset
+global elements found in Appendix C must be handled                 and before measurement, all with probability p = 0.003.
+explicitly.                                                         Self-decoding uses BP+OSD (order 7) on the stacked
+                                                                    detectorobservable matrix with three weight proles per
+                                                                    mechanism. Completion elements of the surface code are
+                                                                    lightened by a randomized local information-set search;
+7      Conclusion                                                   for the BB code only greedy pairwise lightening was used,
+                                                                    so their weights are upper bounds.           In Table 5, weight
+                                                                    is the number of fault mechanisms in a self-decoded
+Constraint-preserving simulated bifurcation in stabilizer
+                                                                    generator, global is the number of completion elements
+coordinates, followed by a local stabilizer-orbit estimate of
+                                                                    and their weight range, and order is the number of
+each logical class's probability, decodes the rotated surface
+                                                                    generators acting on one mechanism.
+code under code-capacity depolarizing noise at near-ML
+accuracy for d ≤ 9 and within 723% of an MPS reference
+at d   = 11, 13 when the bifurcation sweep is lengthened
+with d. It outperforms matching and correlated BP+OSD
+                                                                    References
+in all 54 held-out cells.   The budget study identies the
+                                                                     [1] Eric Dennis, Alexei Kitaev, Andrew Landahl, and
+sweep length as the resource that must scale, shows that
+                                                                           John Preskill.          Topological quantum memory.      J.
+SB and SA share the same accuracy plateau with SB reach-
+                                                                           Math. Phys., 43(9):44524505, 2002.
+ing it in less search time, and attributes the residual gap
+to the locality of the degeneracy estimate.
+                                                                     [2] Pavithran Iyer and David Poulin.           Hardness of de-
+                                                                           coding quantum stabilizer codes.       IEEE Trans. Inf.
+                                                                           Theory, 61(9):52095223, 2015.
+
+Data and code availability                                           [3] Sergey Bravyi, Martin Suchara, and Alexander Vargo.
+                                                                           Ecient algorithms for maximum likelihood decoding
+All code (decoders, experiment drivers, the circuit-level                  in the surface code. Phys. Rev. A, 90:032326, 2014.
+locality analysis, Slurm scripts and analysis), the per-cell
+summary tables and the gure scripts are available at                [4] Andrew S. Darmawan and David Poulin. Linear-time
+[TODO: repository / Zenodo DOI]. The per-shot outputs                      general decoding algorithm for the surface code. Phys.
+(≈1.5 GB) are available on request [TODO: or Zenodo].                      Rev. E, 97:051302, 2018.
+
+
+
+                                                                9
+ [5] Christopher T. Chubb.       General tensor network de-                   [20] Hayato     Goto,     Kotaro     Endo,      Masaru    Suzuki,
+    coding of 2D Pauli codes, 2021.                                               Yoshisato Sakai, Taro Kanao, Yohei Hamakawa, Ryo
+                                                                                  Hidaka, Masaya Yamasaki, and Kosuke Tatsumura.
+ [6] James R. Wootton and Daniel Loss. High threshold                             High-performance combinatorial optimization based
+    error correction for the surface code. Phys. Rev. Lett.,                      on classical mechanics.         Sci. Adv., 7(6):eabe7953,
+    109:160503, 2012.                                                             2021.
+
+ [7] Adrian Hutter, James R. Wootton, and Daniel Loss.                        [21] Zhao and Yan. TODO: Entropic rigidity ... (full title
+    Ecient Markov chain Monte Carlo algorithm for the                            to be checked), 2026.
+    surface code. Phys. Rev. A, 89:022326, 2014.
+                                                                              [22] Krishnamoorthy et al. Certied decoding of quantum
+ [8] Martínez-García et al. TODO: population-annealing                            LDPC codes, 2026.
+    free-energy decoder (title to be checked), 2024.
+                                                                              [23] Liu, Zeng, Wu, and Lao.          Approximate maximum-
+
+ [9] Tobias, Nikolas P. Breuckmann, and Placke. TODO:                             likelihood decoding via truncated free energies, 2026.
+
+    worm-algorithm       optimal    decoding          (title    to    be
+                                                                              [24] S.    Kirkpatrick,   C.   D.   Gelatt,    and   M.   P.   Vec-
+    checked), 2026.
+                                                                                  chi.    Optimization by simulated annealing.          Science,
+
+[10] Jack Edmonds.      Paths, trees, and owers.              Can. J.            220(4598):671680, 1983.
+
+    Math., 17:449467, 1965.
+                                                                              [25] H. Bombin and M. A. Martin-Delgado.                  Optimal
+                                                                                  resources for topological two-dimensional stabilizer
+[11] Oscar Higgott.      PyMatching:          A Python package
+                                                                                  codes: Comparative study. Phys. Rev. A, 76:012305,
+    for decoding quantum codes with minimum-weight
+                                                                                  2007.
+    perfect matching.     ACM Trans. Quantum Comput.,
+    3(3):16, 2022.
+                                                                              [26] Austin G. Fowler, Matteo Mariantoni, John M. Mar-
+                                                                                  tinis, and Andrew N. Cleland.             Surface codes:   To-
+[12] Oscar Higgott and Craig Gidney.            Sparse Blossom:
+                                                                                  wards practical large-scale quantum computation.
+    correcting   a   million   errors   per    core    second        with
+                                                                                  Phys. Rev. A, 86:032324, 2012.
+    minimum-weight matching. Quantum, 9:1600, 2025.
+
+                                                                              [27] Joschka Roe. LDPC: Python tools for low density
+[13] Pavel Panteleev and Gleb Kalachev.                  Degenerate
+                                                                                  parity check codes.         https://pypi.org/project/
+    quantum LDPC codes with good nite length per-
+                                                                                  ldpc/, 2022.
+    formance. Quantum, 5:585, 2021.
+                                                                              [28] David K. Tuckett.         qecsim:    quantum error cor-
+[14] Joschka Roe, David R. White, Simon Burton, and                              rection simulator.         https://github.com/qecsim/
+    Earl Campbell.      Decoding across the quantum low-                          qecsim, 2021. Version 1.0b9.
+    density parity-check code landscape. Phys. Rev. Re-
+    search, 2:043423, 2020.                                                   [29] H. Bombin, Ruben S. Andrist, Masayuki Ohzeki,
+                                                                                  Helmut G. Katzgraber, and M. A. Martin-Delgado.
+[15] Jun Fujisaki, Hirotaka Oshima, Shintaro Sato, and                            Strong resilience of topological codes to depolariza-
+    Keisuke Fujii. Practical and scalable decoder for topo-                       tion. Phys. Rev. X, 2:021004, 2012.
+    logical quantum error correction with an Ising ma-
+    chine. Phys. Rev. Research, 4:043086, 2022.                               [30] Sergey Bravyi, Andrew W. Cross, Jay M. Gambetta,
+                                                                                  Dmitri Maslov, Patrick Rall, and Theodore J. Yoder.
+[16] Jun Fujisaki et al. Quantum error correction with an                         High-threshold and low-overhead fault-tolerant quan-
+    Ising machine under circuit-level noise.             Phys. Rev.               tum memory. Nature, 627:778782, 2024.
+    Research, 5:043261, 2023.
+                                                                              [31] Craig Gidney. Stim: a fast stabilizer circuit simulator.
+[17] Yusaku Takeuchi et al. Comparative study of decod-                           Quantum, 5:497, 2021.
+    ing the surface code using simulated annealing under
+    depolarizing noise, 2023.
+
+
+[18] Yugo Takada, Yusaku Takeuchi, and Keisuke Fujii.
+    Ising model formulation for highly accurate topo-
+    logical color codes decoding.        Phys. Rev. Research,
+    6:013092, 2024.
+
+
+[19] Hayato Goto, Kosuke Tatsumura, and Alexander R.
+    Dixon. Combinatorial optimization by simulating adi-
+    abatic bifurcations in nonlinear Hamiltonian systems.
+    Sci. Adv., 5(4):eaav2372, 2019.
+
+
+
+                                                                         10
+                                                                                                         ∗
+Table 3:   All 54 held-out cells:     shots, reference LER (%), and   LER/LERREF of each decoder.            :   main decoder
+signicantly worse than REF (Holm p < 0.05).
+
+      d      p      shots REF (%) MWPM BP+OSDc            SA+SOE1    SB MAP SB+SOE1    SB+SOE2      G    SB400 +SOE2
+      3    0.04   400,000      1.93      1.18      1.08       1.00      1.12    1.00       1.00   1.00                 
+      3    0.05   200,000      2.92      1.17      1.06       1.00      1.11    1.00       1.00   1.01                 
+      3    0.06   100,000      4.08      1.16      1.06       0.99      1.10    0.99       0.99   1.05                 
+      3    0.08    50,000      6.99      1.13      1.05       1.00      1.07    1.00       1.01   0.95                 
+      3    0.10    20,000      10.6      1.09      1.02       1.00      1.04    1.00       0.99   1.14                 
+      3    0.12    20,000      13.8      1.11      1.05       1.00      1.08    1.00       1.01   0.95                 
+      3    0.14    10,000      18.1      1.09      1.04       1.00      1.06    1.00       1.00   1.02                 
+      3    0.16    10,000      21.8      1.09      1.04       0.99      1.04    1.00       0.99   1.07                 
+      3    0.18    10,000      25.3      1.07      1.04       1.00      1.07    1.00       1.00   1.04                 
+      5    0.04   400,000     0.539      1.68      1.33       1.04      1.26    1.04       1.02   0.98                 
+      5    0.05   200,000      1.02      1.64      1.34       1.05      1.24    1.05       1.02   0.96                 
+      5    0.06   100,000      1.68      1.62      1.29       1.04      1.21    1.04       1.02   0.96                 
+      5    0.08    50,000      3.74      1.51      1.23       1.02      1.20    1.03       1.02   0.97                 
+      5    0.10    20,000      6.78      1.43      1.21       1.02      1.19    1.02       1.00   1.00                 
+      5    0.12    20,000      10.9      1.34      1.16       1.03      1.14    1.02       1.01   0.96                 
+      5    0.14    10,000        16      1.27      1.14       1.05      1.14    1.05      1.04∗   0.85                 
+      5    0.16    10,000      20.8      1.25      1.13       1.02      1.11    1.01       1.00   0.98                 
+      5    0.18    10,000      25.4      1.21      1.14       1.03      1.12    1.03       1.01   0.94                 
+      7    0.04   400,000     0.129      2.70      1.77       1.03      1.43    1.03       1.01   1.00                 
+      7    0.05   200,000     0.314      2.49      1.69       1.04      1.42    1.03       1.01   0.99                 
+      7    0.06   100,000     0.622      2.38      1.61       1.07      1.35    1.08       1.02   0.99                 
+      7    0.08    50,000      1.94      2.04      1.53       1.04      1.33    1.05       1.04   0.96                 
+      7    0.10    20,000      4.15      1.86      1.46       1.05      1.26    1.04       1.02   0.97                 
+      7    0.12    20,000      7.74      1.71      1.44       1.07      1.28    1.07      1.06∗   0.92                 
+      7    0.14    10,000      12.7      1.53      1.36       1.05      1.20    1.04       1.02   0.97                 
+      7    0.16    10,000      18.7      1.46      1.34       1.07      1.22    1.07      1.06∗   0.88                 
+      7    0.18    10,000      26.5      1.29      1.21       1.04      1.13    1.03       1.02   0.93                 
+      9    0.04   400,000    0.0315      4.33      2.51       1.10      1.44    1.10       1.05   0.99                 
+      9    0.05   200,000     0.096      3.84      2.30       1.11      1.48    1.06       1.04   0.99                 
+      9    0.06   100,000     0.238      3.56      2.07       1.18      1.46    1.19      1.15∗   0.94                 
+      9    0.08    50,000      0.94      2.82      2.00       1.03      1.39    1.03       1.01   0.99                 
+      9    0.10    20,000      2.56      2.47      1.86       1.14      1.37    1.14      1.11∗   0.92                 
+      9    0.12    20,000      6.08      2.02      1.66       1.09      1.28    1.12      1.08∗   0.92                 
+      9    0.14    10,000      10.6      1.86      1.61       1.08      1.29    1.13      1.10∗   0.89                 
+      9    0.16    10,000      17.3      1.62      1.46       1.09      1.24    1.12      1.10∗   0.83                 
+      9    0.18    10,000      24.7      1.47      1.38       1.08      1.19    1.10      1.09∗   0.80                 
+     11    0.04 1,000,000     0.008      6.21      3.37       1.07      1.59    1.14       1.02   1.00               0.82
+     11    0.05   400,000    0.0325      5.15      3.18       1.08      1.48    1.15       1.12   0.97               1.00
+     11    0.06   400,000    0.0912      5.02      2.72       1.10      1.64    1.23      1.17∗   0.96               1.12
+     11    0.08    50,000       0.5      3.97      2.68       1.07      1.52    1.22      1.20∗   0.93               1.10
+     11    0.10    20,000      1.83      2.96      2.01       1.06      1.49    1.25      1.25∗   0.87               1.10
+     11    0.12    20,000      4.28      2.55      2.18       1.14      1.52    1.30      1.28∗   0.82               1.12
+     11    0.14    10,000      8.83      2.11      1.93       1.14      1.46    1.35      1.33∗   0.71               1.12
+     11    0.16    10,000      16.3      1.73      1.60       1.11      1.31    1.22      1.22∗   0.70               1.10
+     11    0.18    10,000      24.7      1.52      1.48       1.10      1.30    1.20      1.20∗   0.62               1.09
+     13    0.04 1,000,000    0.0021      9.71      4.86       0.90      2.10    1.43       1.33   0.96               1.00
+     13    0.05   400,000   0.00675     12.11      6.48       1.30      2.70    2.04      1.78∗   0.93               1.20
+     13    0.06   400,000     0.033      7.20      3.30       1.11      2.14    1.69      1.68∗   0.89               0.93
+     13    0.08    50,000      0.23      5.74      3.99       1.23      2.32    1.94      1.87∗   0.82               1.07
+     13    0.10    20,000      1.03      4.14      2.67       1.22      2.12    1.88      1.82∗   0.74               1.10
+     13    0.12    20,000      3.12      3.28      2.65       1.25      2.03    1.87      1.82∗   0.64               1.18
+     13    0.14    10,000      7.51      2.48      2.26       1.26      1.79    1.69      1.68∗   0.54               1.23
+     13    0.16    10,000      15.1      1.93      1.88       1.25      1.63    1.55      1.54∗   0.42               1.19
+     13    0.18    10,000      25.1      1.64      1.58       1.20      1.43    1.39      1.38∗   0.40               1.17
+
+
+
+
+                                                             11
+Table 4: LER/LERREF (SOE r = 2) at d = 13 on the rst
+104 shots of each cell, and search time per syndrome (s,
+p = 0.10).
+          budget                 time 0.08 0.10 0.12 0.14 0.16 0.18
+          SB 8 × 100             0.45   2.50    1.84   1.82     1.68   1.54 1.38
+          SB 8 × 200             0.87   1.25    1.37   1.29     1.40   1.32    
+          SB 8 × 400             1.74   1.31    1.10   1.17     1.23   1.19 1.17
+          SB 16 × 100            0.85   1.88    1.49   1.55     1.46   1.39    
+          SB 32 × 100            1.66   1.63    1.23   1.28     1.33   1.29    
+          SB 64 × 100            3.28   1.50    1.12   1.17     1.23   1.21    
+          SB 32 × 400            6.55   1.19    1.11   1.10     1.13   1.10 1.08
+          SA 8 × 25              0.71   3.88    2.91   2.60     2.27   1.96    
+          SA 8 × 50              1.39   1.75    1.69   1.77     1.69   1.58    
+          SA 8 × 100             2.77   1.19    1.21   1.20     1.25   1.24 1.20
+          SA 8 × 200             5.50   1.19    1.06   1.11     1.12   1.12    
+          SA 16 × 100            5.52   1.19    1.15   1.11     1.16   1.15    
+          SA 32 × 200            22.0   1.19    1.11   1.09     1.12   1.10 1.08
+
+
+
+
+Table 5: Circuit-level DEM stabilizer group at p = 0.003:
+mechanisms, stabilizer dimension (spins), weight of self-
+decoded generators, fraction with weight ≤ 8, completion
+(global) elements, and energy-term order.
+code            mech.   spins weight p50 /p99      ≤ 8 global (weight) order mean/p99 /max
+surface d = 3       219    194            3/3 100.00%                   0      2.67/16/21
+surface d = 5     1,677 1,556             3/4 100.00%            4 (414)      2.82/15/24
+surface d = 7     5,471 5,134             3/4 99.96%            6 (1426)      2.85/14/26
+surface d = 9 12,705 11,984               3/4 99.99%             6 (330)      2.85/14/27
+surface d = 11 24,483 23,162              3/4 100.00%           13 (336)      2.86/14/29
+surface d = 13 41,909 39,724              3/4 99.99%            14 (357)      2.87/13/26
+BB [[72, 12, 6]] 16,164 15,726            3/4 99.88%          261 (3104)      3.55/33/95
+
+
+
+
+                                                                                             12
+

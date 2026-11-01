@@ -1,0 +1,452 @@
+Introduction
+
+Quantum error correction is a key ingredient of fault-tolerant quantum computation, protecting logical information from physical noise through redundant encoding and error recovery . Recent experiments demonstrate surface-code memories below threshold and elements of integrated fault-tolerant architectures . Their protection depends on the classical decoder used to interpret error syndromes, as improvements on experimental surface-code data illustrate . Scaling quantum error correction therefore requires accurate decoders with manageable computational cost.
+
+Quantum degeneracy makes decoding more than error identification. Errors differing by a stabilizer act identically on encoded information; maximum-likelihood decoding therefore selects the logical class with the largest total probability . In an Ising formulation, even a globally minimum-energy error can belong to a less probable class. The challenge is to connect low-energy search to logical-class inference.
+
+Several approaches address different parts of this problem. Minimum-weight perfect matching efficiently decodes suitable error graphs , while belief propagation with ordered-statistics post-processing handles more general parity-check structures . Tensor-network methods approximate class probabilities by contraction ; Markov-chain Monte Carlo, population annealing, and worm methods estimate probabilities or ratios through sampling . These approaches distinguish finding favorable configurations from estimating their class’s total weight.
+
+Ising formulations connect quantum decoding to physics-inspired optimization. Digital Annealer decoding has been developed from quadratic unconstrained binary optimization and extended to circuit-level noise . Stabilizer-generator coordinates instead satisfy syndrome constraints exactly, as demonstrated for surface and color codes . Iterative low-order decoding reduces interaction order by approximating cross-type correlations through alternating subproblems . These approaches establish an optimization interface, while leaving the choice of search dynamics and the treatment of logical-class probabilities as distinct design questions.
+
+The quantum inspiration for simulated bifurcation (SB) comes from dynamical approaches to optimization. Quantum annealing varies a Hamiltonian to seek low-energy configurations ; quantum bifurcation machines use the adiabatic evolution of Kerr-nonlinear parametric oscillators . SB replaces quantum-state evolution with classical position and momentum updates derived from the corresponding nonlinear dynamics , exemplifying physics-inspired computing on classical hardware. Synchronous SB updates support GPU and FPGA implementations, with favorable speed–quality tradeoffs on selected Ising benchmarks . Extensions include heating, bifurcation control, tabu search , higher-order objectives , and discrete-phase and Potts variables . These developments broaden the search procedure but do not themselves supply logical-class probabilities.
+
+Combining search with class-probability estimation is also an active direction. Truncated-free-energy decoding reuses stochastic search candidates , while probabilistic formulations target class partition functions . We instead sum a complete prescribed generator-space neighborhood around one candidate per class, including configurations absent from the search output. At radius two, locality permits histogram-based counting without explicit pair enumeration.
+
+We study the combination of constraint-preserving SB (CP-SB) and local stabilizer-orbit expansion (SOE), using the rotated surface code as a benchmark with an exact or tensor-network reference. Building on the established stabilizer-coordinate representation, our contributions are as follows:
+
+- Complete local-neighborhood aggregation. Constraint-preserving SB (CP-SB) supplies class-specific candidates, and stabilizer-orbit expansion (SOE) sums a complete prescribed generator-space Hamming ball around each selected center, including unvisited configurations.
+
+- Exact radius-two counting. An energy-change histogram and overlap corrections evaluate the local sum exactly. Counting takes linear work under bounded support and overlap degree once the center and support structure are available; this is not exact full-class inference.
+
+- Controlled accuracy–resource comparisons. Held-out testing and paired exploratory budget studies separate search and aggregation effects. Matched-inference SB/SA comparisons identify settings with no significant accuracy difference but greater SB work and fewer sequential rounds, separately from implementation-specific timings.
+
+The remainder of this paper is organized as follows. Section II constructs the decoder; Sec. III specifies evaluation and resource measures; Sec. IV reports accuracy, aggregation effects, and costs. Sections V and VI discuss limitations and conclude. Appendices A–C provide mathematical identities, reproducibility evidence, and circuit-level structural checks.
+
+METHODS: Decoder construction
+
+Figure 1 summarizes the decoder: search each syndrome-compatible logical class for a low-weight center, aggregate a complete neighborhood around that center, and choose the class with the largest local mass. Aggregation includes equivalent errors absent from the search output.
+
+Sections II A–C define the objective, feasible energy, and search; Secs. II D–E define aggregation and its exact radius-two evaluation. Section II F supplies the matched simulated-annealing control.
+
+[]
+
+Decoding objective and logical classes
+
+Decoding compares logical-class probabilities; search and aggregation approximate different parts of this task.
+
+We consider independent depolarizing noise on a rotated planar surface code with distance d, n = d² data qubits, and m = n − 1 independent stabilizer generators. Each qubit experiences X, Y, or Z with probability p/3. For a binary symplectic error vector e ∈ 𝔽₂^(2n), let |e| count its nonidentity Pauli factors. Its probability is
+
+$$P(e)=(1-p)^n w^{|e|},\qquad w=\frac{p}{3(1-p)}.
+\tag{1}\label{eq:1}$$
+
+The code encodes one logical qubit, giving four logical Pauli classes. We use the convention e = (e^(x), e^(z)), with Y represented by (1, 1) at a qubit but contributing only one unit to |e|. The measured syndrome is denoted by s.
+
+Choose a syndrome-compatible seed e₀. Let G contain the independent stabilizer generators as rows, and let ℓ_(L) denote representatives of the four logical Pauli classes, L = 0, 1, 2, 3. Here G ∈ 𝔽₂^(m × 2n), all products and sums in Eq. (2) are over 𝔽₂, and the representatives ℓ_(L) are zero-syndrome logical operators. Every error in class L has a unique representation
+
+e_(L)(u) = e₀ ⊕ ℓ_(L) ⊕ uG,   u ∈ 𝔽₂^(m).
+
+The unnormalized class probability is
+
+$$\begin{gathered}
+Z_L(s)=\sum_u w^{|e_L(u)|}
+=\sum_u e^{-\beta E_L(u)},\\
+E_L(u)=|e_L(u)|,\quad \beta=\log\frac{3(1-p)}p.
+\end{gathered}
+\tag{3}\label{eq:3}$$
+
+The conditional class probability is Z_(L)/∑_(L^(′))Z_(L^(′)). Maximum-likelihood decoding chooses the largest Z_(L), equivalently the smallest dimensionless free energy −β⁻¹log Z_(L) in the noise range studied. Here β is a statistical parameter fixed by the noise model, not a physical device temperature.
+
+Candidate-MAP compares the lowest energies found in the classes; without exact search, it need not equal minimum-weight decoding. We instead use each candidate as the center of a prescribed local mass estimate.
+
+Exact constraints and the Pauli-weight energy
+
+Stabilizer coordinates enforce the constraints; the physical Pauli weight defines the search energy.
+
+The seed is obtained by matching the X and Z components separately. A binary linear-system solution would also provide a feasible seed, although its quality can affect a finite-budget search. Equation (2) guarantees that each binary configuration preserves both syndrome and logical class.
+
+With generator spins σ_(j) = (−1)^(u_(j)), define
+
+$$\begin{gathered}
+\tau_q^x=(-1)^{(e_0\oplus\ell_L)_q^x}
+\prod_{j:G_{j,q}=1}\sigma_j,
+\\
+\tau_q^z=(-1)^{(e_0\oplus\ell_L)_q^z}
+\prod_{j:G_{j,n+q}=1}\sigma_j.
+\end{gathered}$$
+
+The exact nonidentity indicator is
+
+$$\mathbf1[e_q\ne I]
+=\frac34-\frac14\tau_q^x-\frac14\tau_q^z
+-\frac14\tau_q^x\tau_q^z.
+\tag{4}\label{eq:4}$$
+
+Summing Eq. (4) gives the Pauli-weight Hamiltonian. On this surface code each qubit touches at most two generators of each type, so the multilinear representation contains terms of order at most four. No syndrome penalty or auxiliary spin is required. The continuous SB variables are an optimization device; the associated sign configurations are the feasible physical errors. We use E_(L)(σ) for the multilinear spin representation, which agrees with E_(L)(u) at σ_(j) = (−1)^(u_(j)).
+
+Constraint-preserving SB candidate search
+
+With a feasible energy representation in place, we use SB to produce candidate centers for aggregation. The dynamics below determines how candidates are generated; their energies alone do not determine the final class decision.
+
+For one replica, x, y ∈ ℝ^(m) denote positions and momenta. We set sgn (0) = +1 and recover generator bits through u_(j) = (1 − sgn x_(j))/2. For each class and restart, CP-SB evolves R replicas for S steps:
+
+$$\begin{gathered}
+y\leftarrow y+\Delta t[-(1-a_k)x+c f(\operatorname{sgn}x)],
+\\ x\leftarrow x+\Delta t\,y,
+\\ a_k=(k+1)/S.
+\end{gathered}
+\tag{5}\label{eq:5}$$
+
+The step index is k = 0, …, S − 1: the momentum update uses the current positions, and the position update uses the newly updated momenta. After each update, a coordinate outside [−1, 1] is set to its boundary sign and its momentum is reset to zero. The initial momenta vanish. The force is the negative gradient of the multilinear energy evaluated at a sign vertex:
+
+$$f_j(\sigma)=\frac{\sigma_j}{2}
+\left[E_L(\sigma^{(j)})-E_L(\sigma)\right],
+\tag{6}\label{eq:6}$$
+
+where σ^((j)) flips spin j. This identity permits evaluation from physical generator flips without introducing a quadratic surrogate. The coupling is c = κ/max (1, max_(j)B_(j)), where B_(j) is the sum of absolute coefficients of energy monomials containing j.
+
+Identical monomials are combined before this coefficient bound is evaluated.
+
+Each class receives a warm restart with initial positions 0.08 + 𝒩(0, 0.01²) and a random restart with positions uniform in (−0.1, 0.1). Each restart has R replicas. Terminal sign configurations and the initial binary seed u = 0 form the candidate pool. Duplicate bitstrings are removed and the pool is sorted by energy, with lexicographic bitstring order breaking energy ties. The first candidate becomes the aggregation center. Intermediate trajectory states are not added to this pool. Our budget notation R × S therefore corresponds to 8R trajectories across four classes and two restart modes. The fixed search configuration is R = 8, S = 100, Δt = 0.45, and κ = 0.70.
+
+Complete local-neighborhood aggregation
+
+The selected centers provide a starting point for comparing classes, but each center represents only one error configuration. We therefore add the probability weights of a prescribed set of stabilizer-equivalent neighbors before making the decision.
+
+The aggregation set is a complete, prescribed Hamming ball in generator coordinates, including configurations that the search did not visit. Its radius measures generator flips, not physical-error weight or spatial extent. For the selected center u_(L)^(*), define
+
+$$\begin{gathered}
+\widehat Z_L^{(r)}=
+\sum_{d_H(u,u_L^*)\le r} w^{E_L(u)},
+\\ \widehat L=\arg\max_L\widehat Z_L^{(r)}.
+\end{gathered}
+\tag{7}\label{eq:7}$$
+
+The decoder returns e₀ ⊕ ℓ_(L̂) ⊕ u_(L̂)^(*)G as a correction. If several computed scores agree with the maximum within relative tolerance 10⁻¹⁵ (zero absolute tolerance), the implementation chooses the lowest class index. Independent generator rows ensure that every term represents a distinct physical error. Thus Eq. (7) is an exact sum over the specified ball and a lower bound on the full unnormalized class mass. It is not an exact class probability or a certificate for the winning class. Increasing the radius increases each mass for fixed centers, but does not guarantee a more accurate ordering of classes.
+
+The radius-one and radius-two balls contain 1 + m and $1+m+\binom m2$ configurations. At d = 13, these counts are 169 and 14,197 per class.
+
+Exact radius-two local-mass evaluation
+
+The radius-two neighborhood contains quadratically many generator pairs, making explicit summation costly. We exploit additivity for disjoint supports and correct the overlapping pairs to compute the same local sum with less work.
+
+Let Δ_(j) be the energy change from flipping generator j. For generators with disjoint physical supports,
+
+Δ_(jk) = Δ_(j) + Δ_(k).
+
+We first count pair sums using a convolution of the single-flip histogram, remove self-pairs, and divide the ordered-pair counts by two. We then replace the additive contribution of each overlapping pair by its true energy change. Let N_(t) count all radius-two configurations with energy change t, including the center, single flips, and corrected pairs. The resulting local mass is
+
+Ẑ_(L)⁽²⁾ = ∑_(t)N_(t)w^(E_(L)(u_(L)^(*)) + t).
+
+The implementation constructs integer counts, checks their nonnegativity and total $1+m+\binom m2$, and sums the corresponding probabilities in ascending Pauli-weight order. The counts and the prescribed local sum are exact mathematically; floating-point powers and summation introduce rounding. Exactness does not extend to the omitted part of the logical class. Appendix A gives the full counting identity.
+
+With bounded generator support and bounded overlap degree, the local counting stage costs O(m) once the physical center and support structure are available. This complexity concerns the local sum. The archived implementation also reconstructs physical candidates with dense matrix operations and builds a cached overlap structure; its complete preprocessing and candidate-selection pipeline is not covered by that linear bound.
+
+Matched simulated-annealing control
+
+To assess what SB contributes to the decoder, we replace only the search procedure by simulated annealing while retaining the feasible representation and aggregation rule. This control separates the choice of search dynamics from the local probability estimator.
+
+The CP-SA control shares the feasible seeds, class Hamiltonians, candidate-pool construction, and aggregation rule. It uses single-generator Metropolis proposals with a geometric temperature schedule from 2.0 to 0.05 over W sweeps, with C chains in each restart mode. Its budget is denoted C × W. Warm chains start at u = 0, while random chains start from independent uniform binary states. Each sweep visits a fresh random permutation of all m generators in each chain. Non-increasing proposals are accepted; an increase ΔE > 0 is accepted with probability e^(−ΔE/T). For W ≥ 2, the geometric schedule includes both endpoints; a single sweep uses the initial temperature. This search temperature is distinct from the channel parameter β in Eq. (3). Although the SA solver also records best-ever states, the benchmark prediction pool uses only terminal states and the seed, with the same deduplication and tie rules as SB. A sweep contains m sequential proposals per chain and is not equivalent in work to one SB step. Holding the inference radius fixed allows the two search procedures to be compared without changing the probability estimator.
+
+Evaluation design
+
+The evaluation separates three questions: how accurately the fixed-configuration decoder performs, how search and aggregation affect that accuracy, and what computational resources they require. We first test held-out errors after independent radius selection, then explore budgets and inference rules. Resource counts and implementation timings are reported separately.
+
+Evaluation stages and data separation
+
+To separate configuration selection from performance assessment, Table 1 distinguishes selection, held-out testing, and exploration. A shot is one physical Pauli error; shared shots produce paired outcomes. LER is failure probability per code-capacity shot, not per measurement round.
+
++----------------------------+----------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------+
+| Stage                      | Conditions and samples                                                                                                     | Role                                                       |
++:===========================+:===========================================================================================================================+:===========================================================+
+| Selection                  | d = 5, 7, 9,p = 0.10, 0.12; respectively 3,,,,and 1, shots per cell; 12, total                                             | Select SOE radius with the search parameters fixed         |
++----------------------------+----------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------+
+| Main evaluation grid       | Six distances 3, 5, 7, 9, 11, 13,nine noise rates 0.04, 0.05, 0.06, 0.08, 0.10, 0.12, 0.14, 0.16, 0.18; 7.12 million shots | Held-out evaluation of CP-SB 8 × 100,radius two            |
++----------------------------+----------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------+
+| Budget scan                | First 10, shots per cell at d = 9, 11, 13, p = 0.08–0.18; incomplete configuration coverage at 0.18                        | Exploratory allocation of replicas/chains and steps/sweeps |
++----------------------------+----------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------+
+| Extended-budget evaluation | CP-SB 8 × 400 at d = 11, 13; full cells for p ≥ 0.08,first 100, shots for p ≤ 0.06                                         | Evaluate a rule chosen after examining the budget scan     |
++----------------------------+----------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------+
+
+Before the held-out grid was generated, radius two was selected only if it reduced pooled selection-set failures and passed an exact paired test at 0.05. It corrected 70 shots missed by radius one and missed 40 corrected by radius one, giving $P_{\rm test}=0.0054$. The resulting main decoder is CP-SB 8 × 100 with SOE radius two. Selection and held-out noise seeds are disjoint. Grid cell sizes range from 10,000 to one million shots.
+
+The budget scan includes SB configurations 8 × 100, 16 × 100, 32 × 100, 64 × 100, 8 × 200, 8 × 400, and 32 × 400, and SA configurations 8 × 25, 8 × 50, 8 × 100, 8 × 200, 16 × 100, and 32 × 200. Each is evaluated with candidate-MAP and SOE radii one and two where available. Five configurations were run at p = 0.18. The extended-budget rule was chosen using these data; it is not an independent held-out confirmation.
+
+Baselines and reference validation
+
+Matching and correlated BP+OSD are accuracy baselines; CP-SA isolates search dynamics at fixed representation and inference; REF estimates logical-class decisions.
+
+The matching baseline decodes the two Pauli components separately. Unit-weight matching and the tested probability-weighted PyMatching implementation produce identical grid predictions. The main BP baseline is correlated BP+OSD-CS with order seven, min-sum updates, and 3n iterations. Here H_(X) and H_(Z) are the binary X- and Z-stabilizer support matrices; H_(Z) detects the X component and H_(X) detects the Z component. Its binary check matrix is
+
+$$\begin{pmatrix}H_Z&0&H_Z\\0&H_X&H_X\end{pmatrix},
+\tag{9}\label{eq:9}$$
+
+with X, Z, Y component priors p/3. The three binary blocks (x, z, y) map to physical components e^(x) = x ⊕ y and e^(z) = z ⊕ y. The implementation checks syndrome compatibility but imposes no explicit per-qubit exclusivity constraint on the three binary events. This construction is the specific correlated baseline tested here; it is not a claim about all BP-based decoders. It improves on the separately decoded BP+OSD baseline in all grid cells.
+
+REF is exact class enumeration at d = 3. For d = 5, 7, 9, it uses an MPS decoder with bond dimension χ = 32. At d = 11, 13, it uses χ = 16, with χ = 32 replacements on selected difficult shots, capped at 3,000 per cell. Difficult shots were identified by a tested decoder failing or disagreeing with the χ = 16 prediction. When the difficult set exceeds the cap, 3,000 shots are selected by sampling without replacement with a fixed random state. This targeted check uses simulation information and is a reference-validation procedure, not a deployable decoder-selection rule.
+
+On the checked difficult subsets at d ≥ 11, the χ = 16/32 comparison has at most two disagreements per cell, and the χ = 32/64 comparison has at most one. The latter check covers 18 cells with 401–3,000 shots each. These observations support a stable numerical reference on the tested subsets; they do not certify exact ML for every larger-code shot. Ratios below one on a finite sample need not imply a decoder with lower expected error than exact ML.
+
+Statistical comparisons
+
+Having specified the compared decoders, we distinguish uncertainty in each LER from uncertainty in their difference. Shared-shot, paired outcomes support the latter comparison.
+
+LER intervals are Wilson 95% intervals. Paired differences use exact two-sided McNemar tests with Holm correction within each comparison family. Figure S2 instead shows conservative Clopper–Pearson difference intervals with Bonferroni allocation; these have at least 95% coverage under the binomial shot model but are not simultaneous Holm-adjusted intervals. Filled markers and interval crossings thus encode different procedures. Pooled discordant counts across cells are descriptive.
+
+Holm families contain all 54 main-grid cells for each fixed decoder pair, including the different REF implementations. Budget families are specific to a configuration pair and inference rule over available cells: the three radius-two families in Fig. S2 contain 15, 18, and 18 cells. Extended-budget families contain 18 cells per decoder pair. Missing configurations are not imputed; correction does not cover all exploratory choices.
+
+Each discordant-event probability receives a Clopper–Pearson interval with failure probability 0.025. Subtracting opposite endpoints gives an interval for LER(A) minus LER(B); negative values favor A.
+
+Computational resources and timing
+
+Accuracy alone does not determine computational usefulness. We therefore distinguish total search work, sequential depth, and measured CPU cost, defining the first two resources as
+
+$$\begin{gathered}
+N_{\Delta E}^{\rm SB}=8RSm,\quad
+N_{\Delta E}^{\rm SA}=8CWm;\\
+D_{\rm SB}=S,\quad D_{\rm SA}=Wm.
+\end{gathered}
+\tag{10}\label{eq:10}$$
+
+The first counts single-generator flip-energy evaluations. The second counts update rounds when logical classes, restarts, and replicas or chains run in parallel, while SA updates within a chain remain sequential. These quantities exclude setup, inference, communication, and the internal cost of an energy evaluation. They are neither end-to-end operation counts nor measured hardware latency. Alternative parallel SA implementations are outside this comparison.
+
+CPU times are medians over 100 unique nontrivial syndromes at p=0.10 on an AMD EPYC 9754 node, using single-process Python 3.11/NumPy 2.4. SB batches updates, SA performs Python proposals, and matching/BP+OSD use compiled components. Thread counts default to one only when environment variables are unset; the archive does not record their actual values. Single-thread execution is therefore not independently verified.
+
+Figure 4 uses historical dense-search/explicit-SOE timings; Table 2 distinguishes later sparse-search/histogram-SOE timings and archived comparators. Both campaigns use 100 unique nontrivial syndromes per condition at p=0.10; the later campaign reuses syndromes and solver seeds. Optimized times exclude once-per-code support preparation. Search-only excludes seeding and aggregation; end-to-end CP includes both. Raw-log “total” may combine inference evaluations and is not a stage definition. MPS timings use fixed bond dimension, not the targeted-validation REF pipeline.
+
+Results
+
+We assess held-out accuracy, budget allocation, aggregation at fixed candidates, and computational costs. Figures 2–5 give the main comparisons; Figs. S1–S2 show resource and paired-effect views.
+
+Accuracy of the fixed-configuration decoder
+
+We first assess the configuration fixed before the held-out evaluation, using the baselines and REF to distinguish practical gains from the remaining accuracy gap. The main decoder improves on matching and correlated BP+OSD in all 54 held-out cells, each significant after Holm correction (largest adjusted p values: 8.7×10⁻¹² and 0.0077). Pooled discordant wins/losses are 55,081/17,007 against matching and 41,739/21,099 against correlated BP+OSD.
+
+For distances up to nine, LER is at most 1.1513 times REF; 27 of these 36 cells show no significant paired difference under Sec. III C’s Holm families, which does not establish equivalence. Maximum ratios rise to approximately 1.33 and 1.87 at distances 11 and 13, revealing a larger-code gap with fixed parameters.
+
+[]
+
+Finite-size behavior and search-budget allocation
+
+The larger-code gap motivates asking whether additional search effort helps and how that effort should be allocated. Increasing the SB step count from 100 to 400 lowers point-estimated LER in all 18 extended-budget cells at distances 11 and 13, with 12 significant after Holm correction. For p≥0.08, REF ratios change from 1.20–1.33 to 1.09–1.12 at distance 11 and from 1.38–1.87 to 1.07–1.23 at distance 13. These are exploratory improvements, not independent confirmation of the selected budget rule.
+
+CP-SB 8×400 and 32×100 use equal flip-energy evaluation counts (4,300,800 at distance 13), not necessarily equal runtime or end-to-end work. At distance 13 and p=0.12, radius-two REF ratios on the 10,000-shot subset are approximately 1.17 and 1.28. The longer run wins/loses 1,935/1,643 discordant shots across 15 cells, with lower LER in nine but only one significant difference after Holm correction. This does not establish a universal allocation advantage.
+
+The distance-11/13 crossing moves from approximately p=0.1167 to 0.1581, versus 0.1765 for REF. Estimates linearly interpolate log-LER differences across p intervals 0.10–0.12, 0.14–0.16, and 0.16–0.18, respectively, without crossing confidence intervals. They demonstrate budget sensitivity, not an asymptotic threshold: sizes are limited and the larger budget was selected after inspecting the scan.
+
+[]
+
+[]
+
+Figure 4’s historical search and explicit-aggregation costs motivate the optimized timings in Table 2. It does not summarize the optimized implementation; paired and resource comparisons are in Figs. S1–S2.
+
+What local aggregation adds after search
+
+Search-budget changes affect the candidates themselves; we next hold those pools fixed to isolate the contribution of the inference rule. At fixed candidate pools, replacing candidate-MAP with local aggregation improves accuracy without assuming global search optimality. On the distance-13, p=0.12, 10,000-shot subset, CP-SB 32×400 gives REF ratios 1.382, 1.115, and 1.096 for MAP, radius one, and radius two; CP-SA 32×200 gives 1.376, 1.099, and 1.093. These examples use larger budgets than Fig. 5’s fixed and 8×400 searches.
+
+Radius two further lowers LER in 50 of 54 grid cells, with three significant after correction and pooled wins/losses of 5,222/4,337. Radius selection preceded this grid; these comparisons describe subsequent behavior.
+
+[]
+
+At the largest scanned SB and SA budgets, radius-two REF ratios remain approximately 1.075–1.129 at distance 13 and p≥0.10. No cell in Fig. S2’s right panel passes Holm correction. Similar residual gaps motivate improving the estimator, but establish neither equivalent decisions nor search convergence; stronger search could still help.
+
+Work, sequential rounds, and elapsed time
+
+We now compare the resources behind the observed accuracy, separating algorithmic counts from implementation-specific elapsed time. At distance 13, SB 8×400 uses four times the evaluations of SA 8×100 but 400 rather than 16,800 rounds; SB 32×400 uses twice the evaluations of SA 32×200 but 400 rather than 33,600 rounds. Neither radius-two comparison has a significant difference in its 18-cell Holm family (Figs. S1–S2). The work–depth tradeoff is therefore two to four times more evaluations for 42–84 times fewer rounds, not a uniformly superior searcher.
+
+  Configuration or stage                             Time (s)
+  ------------------------------------------------ ----------
+  PyMatching decoder                                 0.000043
+  Correlated BP+OSD decoder                            0.0050
+  MPS, χ = 16                                           0.540
+  MPS, χ = 32                                           3.269
+  SB search, 8 × 100                                    0.104
+  SB search, 8 × 400                                    0.369
+  SB search, 32 × 400                                   0.841
+  SA search, 8 × 100                                    1.084
+  SA search, 32 × 200                                    8.33
+  Explicit radius-two SOE, SB 8×100 (historical)        3.528
+  Histogram radius-two SOE, SB 8×100 (optimized)     0.000816
+  End to end: SB 8 × 100 + radius two                   0.110
+  End to end: SB 8 × 400 + radius two                   0.375
+
+  : Selected archived CPU timings at distance 13. Medians in seconds per unique nontrivial syndrome, measured at p = 0.10. Rows identify the timed stage; search-only values are not end-to-end decoder times. CP search and end-to-end rows use the optimized sparse-search/histogram implementation. The explicit-SOE row is historical; the two SOE rows both specify SB 8×100. Baseline rows retain their archived implementations, and the execution-environment limits in Sec. III D apply.
+
+The timing breakdown also shows why fast local counting matters in practice. For distance-13 SB 8×100 pools, histogram aggregation reduces radius-two evaluation from 3.52781 s to 0.00081604 s, approximately 4,300-fold; this is a stage-specific, not decoder-wide, speedup. Checks of radii one and two over the same 42,800 decodes found identical candidate pools between sparse and full-vector search, unchanged decisions including ties, and maximum relative class-score differences of 1.2×10⁻¹⁵. These finite checks do not guarantee bit-identical scores or supply new accuracy data.
+
+Extended CP-SB takes 0.375 s versus 0.540 s for fixed-bond χ=16 MPS, but retains an accuracy gap and is not compared against the complete targeted-validation REF runtime. SB/SA CPU ratios also mix batching and language overhead with algorithmic structure. Hardware latency requires measuring memory traffic, synchronization, and occupancy; fewer update rounds alone do not establish acceleration.
+
+Discussion
+
+The construction connects low-energy search to degenerate decoding through exact aggregation over a complete prescribed local neighborhood. Exactness does not extend to the full logical-class mass: classes can have different omitted fractions, so local evaluation does not certify their ordering. The held-out and fixed-candidate comparisons support the combination, while larger codes retain a gap to REF.
+
+Both search and mass estimation may contribute to that gap. Matched-work budget comparisons motivate examining run length alongside replica count, without establishing a universally preferred allocation. Similar residual errors under the largest tested SB and SA budgets do not establish convergence or isolate truncation as the cause. Future comparisons should vary search at fixed inference and vary the estimator at fixed candidate pools. Multiple-center or adaptive neighborhoods must avoid duplicate counting and measure the associated overhead.
+
+Histogram counting makes aggregation inexpensive in the tested implementation, subject to the support and overlap conditions of Sec. II E. Its stage-specific speedup is distinct from SB’s work–depth tradeoff. Neither historical CPU timings nor the optimized comparison establishes dominance over the adaptive REF pipeline. Demonstrating hardware benefit requires matched implementations and measurements of end-to-end latency, throughput, memory traffic, and synchronization.
+
+Beyond the surface-code benchmark, applicability depends separately on the coordinate representation and the locality needed for efficient counting. The coordinate construction extends algebraically to binary stabilizer codes with an independent generator basis and 4^(k) logical Pauli classes for k encoded qubits. Small fixed-k families with suitable local bases, including planar color codes, are natural tests; stabilizer-coordinate optimization already exists for color codes . Efficient radius-two counting additionally requires bounded supports and overlap, and the surface-code four-body representation is not general. Local mass depends on the basis; dependent generators can duplicate physical errors. For high-rate qLDPC codes, logical-class enumeration is a further obstacle. This is not yet an efficient general qLDPC decoder.
+
+Circuit-level noise requires a further change from data-qubit errors to fault mechanisms. At circuit level, kernel coordinates of the stacked detector and logical-observable maps preserve both records. Our archived surface-code and bivariate-bicycle checks use the construction associated with Ref. and Stim (Appendix C). Low-weight selected generators still require global completion and do not bound mechanism incidence. A complete decoder must incorporate fault likelihoods, global elements, and nonuniform-weight aggregation; accuracy and runtime remain unmeasured. The missing raw circuit and matrix artifacts also prevent independent reconstruction of the archived structural checks.
+
+Conclusion
+
+We have combined simulated-bifurcation search with probability aggregation over complete prescribed stabilizer-coordinate neighborhoods to connect low-energy optimization to logical-class inference. The coordinates preserve syndrome and logical class without penalty terms, while a support-based histogram evaluates the radius-two mass exactly without enumerating all generator pairs. The resulting local mass remains an approximation to the full logical-class mass. On held-out rotated-surface-code data under independent depolarizing noise, the main decoder improves over the tested matching and correlated BP+OSD baselines, while exploratory increases in the SB step count improve larger-distance accuracy. At fixed candidate pools, local aggregation improves on candidate-MAP inference. In the selected SB–SA comparisons, SB uses more flip-energy evaluations but fewer sequential update rounds; the corresponding hardware latency remains to be measured. These results support a search-then-aggregate approach to code-capacity decoding, with further progress depending on the joint design of search budgets, local mass estimators, and their computational implementation.
+
+ Exact identities and locality conditions
+
+This appendix justifies the feasible coordinates, the flip-energy force, and the radius-two histogram used in Sec. II. It separates exact identities from the locality assumptions needed for efficient evaluation.
+
+Constraint preservation and counting
+
+All binary operations are over 𝔽₂, and Pauli errors are identified up to overall phase. Let H be the syndrome map in the (X ∣ Z) convention, including the symplectic pairing, so that HG^(T) = 0. When the measured checks are the rows of G in the same order, H = GJ, where
+
+$$J=\begin{pmatrix}0&I_n\\I_n&0\end{pmatrix}.$$
+
+A different ordering of measured checks gives the corresponding row permutation of this map. Logical representatives have zero syndrome, so Eq. (2) gives
+
+He_(L)(u)^(T) = He₀^(T) + Hℓ_(L)^(T) + HG^(T)u^(T) = s.
+
+Varying u multiplies the error by a stabilizer and therefore preserves its logical class. Since rank_(𝔽₂)G = m, equality uG = vG implies u = v. A generator-space ball thus maps injectively to physical Pauli errors up to phase. Dependent generators would still preserve the constraints, but could count the same physical error more than once.
+
+For 0 < p < 1, the weight w = p/[3(1 − p)] is positive and finite. For any nonnegative integer radius r, the ball ℬ_(r)(u_(L)^(*)) contains its center, and
+
+$$\begin{gathered}
+Z_L-\widehat Z_L^{(r)}
+=\sum_{u\notin\mathcal B_r(u_L^*)}w^{E_L(u)}\ge0,
+\\ 0<\widehat Z_L^{(r)}\le Z_L.
+\end{gathered}$$
+
+This subset-sum bound concerns unnormalized masses. It supplies no bound on the class-dependent fraction of omitted mass and does not certify the ordering of logical classes or calibrated conditional probabilities.
+
+Flip energies and force
+
+With constraint preservation established, we verify how discrete flip energies supply the interaction force used by SB.
+
+Any multilinear energy can be written as E(σ) = A_(j)(σ_( ≠ j)) + σ_(j)b_(j)(σ_( ≠ j)), where neither A_(j) nor b_(j) depends on σ_(j). Flipping spin j gives
+
+Δ_(j) = E(σ^((j))) − E(σ) = −2σ_(j)b_(j).
+
+Since σ_(j)² = 1 at a spin vertex,
+
+$$\frac{\sigma_j}{2}\Delta_j=-b_j
+=-\frac{\partial E}{\partial\sigma_j},$$
+
+which proves Eq. (6). The function b_(j) here is distinct from the coefficient bound B_(j) used to normalize the coupling in Sec. II C. The SB update evaluates this identity at σ = sgn (x), with the stated zero-sign convention; it does not identify the interaction force with −∇E(x) at arbitrary continuous positions. This is an identity for the chosen energy, not a theorem of monotonic energy decrease or convergence of the SB updates.
+
+Radius-two histogram
+
+We next derive the counting identity that replaces explicit pair enumeration while preserving the complete radius-two sum.
+
+Fix a logical class and its center u_(L)^(*), and write E₀ = E_(L)(u_(L)^(*)). Let ϵ_(j) be the binary unit vector in generator coordinate j. All changes are measured from the same center:
+
+$$\begin{gathered}
+\Delta_j=E_L(u_L^*\oplus\epsilon_j)-E_0,
+\\
+\Delta_{jk}=E_L(u_L^*\oplus\epsilon_j\oplus\epsilon_k)-E_0
+\quad(j<k).
+\end{gathered}$$
+
+Write h_(t) = #{j : Δ_(j) = t} for integer t, and define (h * h)_(t) = ∑_(a ∈ ℤ)h_(a)h_(t − a). This convolution counts ordered generator pairs, including self-pairs. Removing the self-pairs and dividing by two gives the histogram of additive changes over all unordered distinct pairs:
+
+$$P_t=\frac12\left[(h*h)_t-\sum_j\mathbf1[t=2\Delta_j]\right].
+\tag{A1}\label{eq:A1}$$
+
+Because the Pauli-weight objective is a sum of single-qubit indicators, generators with disjoint physical-qubit supports satisfy Δ_(jk) = Δ_(j) + Δ_(k). Let 𝒪 contain each pair j < k whose physical-qubit supports intersect, including overlap between X and Z components on the same qubit. For each such pair, we remove its additive contribution and insert its true energy change. Including the center and all single flips, the exact radius-two histogram is
+
+$$\begin{gathered}
+N_t=\mathbf1[t=0]+h_t+P_t
+\\+\sum_{(j,k)\in\mathcal O}
+\bigl(\mathbf1[t=\Delta_{jk}]-\mathbf1[t=\Delta_j+\Delta_k]\bigr).
+\end{gathered}
+\tag{A2}\label{eq:A2}$$
+
+Thus N_(t) ≥ 0 and $\sum_tN_t=1+m+\binom m2$: each overlap correction preserves the total count. With independent generator rows, these counts enumerate distinct physical errors, and
+
+Ẑ_(L)⁽²⁾ = ∑_(t)N_(t)w^(E₀ + t).
+
+The histogram identities are exact in integer arithmetic; the implementation uses fixed-width integer counts and floating-point probability evaluation. Exact counting therefore assumes no integer overflow, while numerical scores remain subject to floating-point rounding and range limits. Exact evaluation of this local sum does not extend to the omitted part of the logical class.
+
+If every generator touches at most a fixed K qubits, single-flip changes lie in [−K, K] and pair changes in [−2K, 2K]. If |𝒪| = O(m), the single-flip counts and overlap corrections require O(m) local work, with fixed-size convolution. Bounded overlap degree is sufficient for this condition. The bound assumes that the physical center and support incidence data have been supplied; it does not cover the complete candidate-selection or decoding pipeline. Dense construction of the overlap matrix, dense reconstruction of candidates, pool scoring, and cache storage are separate costs in the archived code. Even cached-structure lookup constructs a key from the dense generator matrix. The bound also relies on the integer Pauli-weight objective: arbitrary position-dependent likelihood weights require a fresh complexity analysis, and correlated objectives require rechecking disjoint-support additivity.
+
+Extended evidence and reproducibility
+
+This appendix complements the main results with resource-based views of the budget study, paired uncertainty for selected configuration comparisons, and links to the archived data. These figures reuse the observations described in Sec. III A rather than introducing independent evaluation samples.
+
+[]
+
+[]
+
+Together, Figs. S1–S2 show that similar accuracy point estimates can accompany different search-work and update-depth costs. Longer SB runs improve some matched-work comparisons, while the selected SB–SA comparisons show no significant paired difference after the stated correction. These observations describe the tested configurations and do not establish equivalence or a measured hardware speedup.
+
+The full grid, budget configurations, paired tests, and timing tables remain in the project archive. The budget-figure manifest records the three input hashes and analysis conventions. The resource plot data and paired plot data are stored separately; plot_evidence_budget.py generates these supplementary views from the archived inputs. These records provide input and analysis provenance, rather than a complete software-environment or output-hash record. The principal machine-readable sources are:
+
++--------------------------------------------------+-----------------------------------------------------+
+| Evidence                                         | Archived file                                       |
++:=================================================+:====================================================+
+| Main-decoder LER and Wilson intervals            | results/paper1_grid/grid_ler.csv                    |
++--------------------------------------------------+-----------------------------------------------------+
+| Main-decoder paired comparisons                  | results/paper1_grid/grid_paired.csv                 |
++--------------------------------------------------+-----------------------------------------------------+
+| Correlated BP+OSD comparisons                    | results/paper1_extra/bposd_corr_paired.csv          |
++--------------------------------------------------+-----------------------------------------------------+
+| Budget LER, all inference rules                  | results/paper1_extra/budget_ler.csv                 |
++--------------------------------------------------+-----------------------------------------------------+
+| Selected configuration-pair effects              | results/paper1_extra/budget_paired_matched.csv      |
++--------------------------------------------------+-----------------------------------------------------+
+| Extended-budget LER                              | results/paper1_extra/budget_scaled_ler.csv          |
++--------------------------------------------------+-----------------------------------------------------+
+| Extended-budget paired tests                     | results/paper1_extra/budget_scaled_paired.csv       |
++--------------------------------------------------+-----------------------------------------------------+
+| Historical timings used in Fig. 4                | results/paper1_extra_timing_p0.10/timing_budget.csv |
++--------------------------------------------------+-----------------------------------------------------+
+| Optimized implementation timings used in Table 2 | results_soe_fast/timing_v2_p0.10/timing_budget.csv  |
++--------------------------------------------------+-----------------------------------------------------+
+| Defined search operation counts                  | results_soe_fast/timing_v2_p0.10/work_counts.csv    |
++--------------------------------------------------+-----------------------------------------------------+
+
+The selected configuration-pair comparisons include both matched-work SB comparisons and SB–SA comparisons with unequal work counts. The historical and optimized timing archives describe different implementation versions; Table 2 identifies the source version of each stage, including its historical explicit-SOE row, as discussed in Secs. III D and IV D.
+
+Additional resource plots: p = 0.08, 0.10, 0.14, 0.16, and 0.18. An additional archived LER-versus-distance view is linked here; the main-text finite-size comparison is Fig. 3, using the preview-derived image. All supplementary views reuse existing observations and do not constitute additional independent tests.
+
+Structural circuit-level checks
+
+Fault-space coordinates and construction
+
+These checks examine whether fault-space coordinates can preserve detector and hypothesized logical-observable records; they do not evaluate a circuit-level decoder. Let H and L denote the corresponding binary maps, and let A = [H; L] denote their vertical concatenation. All operations are over 𝔽₂. For a fault-mechanism vector f, the records are Hf^(T) and Lf^(T). Generators satisfying AG^(T) = 0 preserve both records under f ↦ f ⊕ uG. A complete independent basis spans ker A, with dimension $N_{\rm mech}-\operatorname{rank}_{\mathbb F_2}A$. Here $N_{\rm mech}$ is the number of fault mechanisms, $H\in\mathbb F_2^{N_{\rm det}\times N_{\rm mech}}$, and $L\in\mathbb F_2^{N_{\rm obs}\times N_{\rm mech}}$, where $N_{\rm det}$ and $N_{\rm obs}$ count detectors and tracked logical observables. If the kernel dimension is M, then $G\in\mathbb F_2^{M\times N_{\rm mech}}$. Here L is a response matrix, not the logical-class label used in the main text. These are fault-space coordinates, rather than the data-qubit stabilizer coordinates of the main benchmark.
+
+The archived instances are memory-Z experiments: rotated surface codes with d rounds at d=3,5,7,9,11,13, and a [[72, 12, 6]] bivariate-bicycle (BB) circuit with six rounds of the depth-eight syndrome-extraction cycle associated with Ref. . The circuit noise parameter is p=0.003. The surface-code circuits use Stim’s generated reset, measurement, post-Clifford depolarization, and pre-round data-depolarization settings . The implemented BB circuit includes post-CNOT two-qubit depolarization, single-qubit depolarization on idle data during gate layers, post-reset and pre-measurement flips, and end-of-cycle data depolarization, with initialization and final readout handled explicitly. The extraction-cycle depth does not include all experiment boundaries. The circuit parameter is not a uniform probability for the merged detector-error mechanisms.
+
+Low-weight candidates are generated heuristically by applying BP+OSD to individual mechanism responses under the stacked map, suppressing the mechanism being reconstructed and rejecting candidates that fail the kernel constraint. Independent candidates are selected over 𝔽₂, and remaining directions are supplied by global null-space completion. The candidate search imposes no fixed spatial or temporal window. The code checks the target rank and kernel membership, but the construction is not a minimum-weight-basis algorithm. Here “global” identifies the completion procedure, not a guarantee that every completion element spans the circuit. Generator weight counts detector-error mechanisms, not physical data-qubit Pauli weight.
+
+Observed basis structure
+
+Table C1 summarizes the archived reports. In the selected surface-code bases, the generators retained before completion have median weight three and 99th-percentile weight at most four. The construction adds respectively 0, 4, 6, 6, 13, and 14 completion elements. These counts describe the generated candidate sets, rather than a lower bound for every possible basis. For BB, it adds 261 elements to a basis of dimension 15,726.
+
++------------------+------------+-----------------+------------------------------------------------+------------------+---------------------------+-----------------------------+
+| Instance         | Mechanisms | Basis dimension | Pre-completion weight median / 99th percentile | Completion count | Maximum completion weight | Maximum mechanism incidence |
++:=================+:===========+:================+:===============================================+:=================+:==========================+:============================+
+| Surface, d=3     | 219        | 194             | 3 / 3.07                                       | 0                | —                         | 21                          |
++------------------+------------+-----------------+------------------------------------------------+------------------+---------------------------+-----------------------------+
+| Surface, d=5     | 1,677      | 1,556           | 3 / 4                                          | 4                | 14                        | 24                          |
++------------------+------------+-----------------+------------------------------------------------+------------------+---------------------------+-----------------------------+
+| Surface, d=7     | 5,471      | 5,134           | 3 / 4                                          | 6                | 26                        | 26                          |
++------------------+------------+-----------------+------------------------------------------------+------------------+---------------------------+-----------------------------+
+| Surface, d=9     | 12,705     | 11,984          | 3 / 4                                          | 6                | 30                        | 27                          |
++------------------+------------+-----------------+------------------------------------------------+------------------+---------------------------+-----------------------------+
+| Surface, d=11    | 24,483     | 23,162          | 3 / 4                                          | 13               | 36                        | 29                          |
++------------------+------------+-----------------+------------------------------------------------+------------------+---------------------------+-----------------------------+
+| Surface, d=13    | 41,909     | 39,724          | 3 / 4                                          | 14               | 57                        | 26                          |
++------------------+------------+-----------------+------------------------------------------------+------------------+---------------------------+-----------------------------+
+| BB [[72, 12, 6]] | 16,164     | 15,726          | 3 / 4                                          | 261              | 104                       | 95                          |
++------------------+------------+-----------------+------------------------------------------------+------------------+---------------------------+-----------------------------+
+
+At distance 13, ten completion elements touch all fourteen detector-time layers and one touches thirteen layers; the maximum completion weight is 57 within a basis of 39,724 elements. These counts refer to the union of detector coordinates touched by constituent mechanisms before their responses cancel modulo two, not to a nonzero net syndrome or a fault duration. The BB maximum completion weight is 104. Its basis uses greedy lightening, whereas the surface-code runs additionally use heuristic search; neither procedure certifies minimum weights.
+
+Generator row weights and mechanism incidence are distinct. The maximum incidence is 21–29 in the surface-code instances and 95 in BB. Under an independent-mechanism likelihood, incidence gives the spin order of each mechanism’s energy term before combining like terms. Small row weights alone therefore do not establish low-order interactions or the bounded support and overlap conditions used in Appendix A. These finite-instance measurements establish neither asymptotic locality nor its impossibility for alternative bases.
+
+Scope and reproducibility limits
+
+No circuit-level decoding LER or online decoder latency was measured in these structural checks. The results motivate a fault-space construction but do not validate likelihood aggregation, search performance, or end-to-end complexity. In particular, nonuniform mechanism weights and global basis elements require treatment before the main search-and-aggregation approach can be assessed at circuit level.
+
+The summary table, distance-13 inspection report, and BB construction report retain the reported structural evidence. The construction script and kernel-basis implementation specify the procedure and its internal checks. The present project snapshot does not include the underlying circuit, detector-error model, or matrix artifacts. Consistency of the retained reports can therefore be checked, but independent recomputation of the archived ranks, kernel membership, and full supports requires recovering or regenerating those artifacts. A new heuristic run need not reproduce the same basis element by element.
+
+35 B. M. Terhal, Quantum error correction for quantum memories, Rev. Mod. Phys. 87, 307 (2015). Google Quantum AI and Collaborators, Quantum error correction below the surface code threshold, Nature 638, 920 (2025). D. Bluvstein et al., A fault-tolerant neutral-atom architecture for universal quantum computation, Nature 649, 39 (2026). J. Bausch et al., Learning high-accuracy error decoding for quantum processors, Nature 635, 834 (2024). E. Dennis, A. Kitaev, A. Landahl, and J. Preskill, Topological quantum memory, J. Math. Phys. 43, 4452 (2002). O. Higgott, PyMatching: A Python package for decoding quantum codes with minimum-weight perfect matching, ACM Trans. Quantum Comput. 3, 16 (2022). J. Roffe, D. R. White, S. Burton, and E. Campbell, Decoding across the quantum low-density parity-check code landscape, Phys. Rev. Research 2, 043423 (2020). S. Bravyi, M. Suchara, and A. Vargo, Efficient algorithms for maximum likelihood decoding in the surface code, Phys. Rev. A 90, 032326 (2014). C. T. Chubb, General tensor network decoding of 2D Pauli codes, arXiv:2101.04125 (2021). A. Hutter, J. R. Wootton, and D. Loss, Efficient Markov chain Monte Carlo algorithm for the surface code, Phys. Rev. A 89, 022326 (2014). F. Martínez-García, F. R. F. Pereira, and P. Parrado-Rodríguez, Near-optimal decoding algorithm for color codes using population annealing, Entropy 28, 91 (2026). Z. Tobias, N. P. Breuckmann, and B. Placke, Optimal Decoding with the Worm, arXiv:2603.05428 (2026). J. Fujisaki, H. Oshima, S. Sato, and K. Fujii, Practical and scalable decoder for topological quantum error correction with an Ising machine, Phys. Rev. Research 4, 043086 (2022). J. Fujisaki, K. Maruyama, H. Oshima, S. Sato, T. Sakashita, Y. Takeuchi, and K. Fujii, Quantum error correction with an Ising machine under circuit-level noise, Phys. Rev. Research 5, 043261 (2023). Y. Takeuchi, Y. Takada, T. Sakashita, J. Fujisaki, H. Oshima, S. Sato, and K. Fujii, Comparative study of decoding the surface code using simulated annealing under depolarizing noise, arXiv:2311.07973 (2023). Y. Takada, Y. Takeuchi, and K. Fujii, Ising model formulation for highly accurate topological color codes decoding, Phys. Rev. Research 6, 013092 (2024). Y. Liu, W. Zeng, P. Li, Y. Liu, G. Huang, Y. Liu, D. Wang, J. Wu, and L. Lao, An iterative Ising decoder for quantum error correction codes, arXiv:2606.12301 (2026). T. Kadowaki and H. Nishimori, Quantum annealing in the transverse Ising model, Phys. Rev. E 58, 5355 (1998). H. Goto, Bifurcation-based adiabatic quantum computation with a nonlinear oscillator network, Sci. Rep. 6, 21686 (2016). H. Goto, K. Tatsumura, and A. R. Dixon, Combinatorial optimization by simulating adiabatic bifurcations in nonlinear Hamiltonian systems, Sci. Adv. 5, eaav2372 (2019). H. Goto, K. Endo, M. Suzuki, Y. Sakai, T. Kanao, Y. Hamakawa, R. Hidaka, M. Yamasaki, and K. Tatsumura, High-performance combinatorial optimization based on classical mechanics, Sci. Adv. 7, eabe7953 (2021). J. Pawłowski, P. Tarasiuk, J. Tuziemski, Ł. Pawela, and B. Gardas, Toward quantum scaling advantage in approximate optimization, Phys. Rev. Applied 26, 014024 (2026). T. Kashimata, M. Yamasaki, R. Hidaka, and K. Tatsumura, Efficient and scalable architecture for multiple-chip implementation of simulated bifurcation machines, IEEE Access 12, 36606 (2024). F. Orlando, D. Volpe, G. Orlandi, M. Graziano, F. Riente, and M. Vacca, High-Parallel FPGA-Based Discrete Simulated Bifurcation for Large-Scale Optimization, arXiv:2510.12407 (2025). B. Yao, D. Ebler, X. Shi, J. Wang, F. Zhang, W. Zhang, and J. Sun, Precision meets speed through an FPGA-based natively sparse Ising machine for combinatorial optimization, Nat. Commun. 17, 8549 (2026). T. Kanao and H. Goto, Simulated bifurcation assisted by thermal fluctuation, Commun. Phys. 5, 153 (2022). H. Goto, R. Hidaka, and K. Tatsumura, Edge-of-chaos-enhanced quantum-inspired algorithm for combinatorial optimization, Phys. Rev. Applied 25, 044011 (2026). X.-Z. Tao, Q.-G. Zeng, Z.-J. Huang, B.-W. Zuo, Y.-Q. Liu, J. Zhuang, H. Okawa, and M.-H. Yung, Tabu-enhanced simulated bifurcation for combinatorial optimization, Commun. Phys. 9, 100 (2026). T. Kanao and H. Goto, Simulated bifurcation for higher-order cost functions, Appl. Phys. Express 16, 014501 (2023). Y. Chen and J. Zhuang, Clock-variable discrete simulated bifurcation: A GPU algorithm for large-scale discrete-phase optimization, unpublished manuscript (2026). J. Zhuang and Y. Chen, Beyond one-hot encoding: Native Potts discrete simulated bifurcation breaks G-set Max-k-Cut records, unpublished manuscript (2026). Y. Liu, W. Zeng, J. Wu, and L. Lao, Approximate maximum-likelihood decoding via truncated free energies, arXiv:2609.03928 (2026). R. Krishnamoorthy et al., Certified decoding of quantum LDPC codes, arXiv:2608.25545 (2026). S. Bravyi, A. W. Cross, J. M. Gambetta, D. Maslov, P. Rall, and T. J. Yoder, High-threshold and low-overhead fault-tolerant quantum memory, Nature 627, 778 (2024). C. Gidney, Stim: a fast stabilizer circuit simulator, Quantum 5, 497 (2021).

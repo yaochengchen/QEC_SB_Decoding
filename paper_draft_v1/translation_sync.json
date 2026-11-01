@@ -1,0 +1,46 @@
+{
+  "reviewed_on": "2026-10-31",
+  "scope": "Reviewed version fingerprints plus structural checks; not automatic semantic equivalence.",
+  "sections": {
+    "Abstract": {
+      "chinese_file": "ABSTRACT_ZH.md",
+      "english_sha256": "e9f1fe6a782aca77814f98d8404f21d7b3ad606f3437e510439d1cb9d9db184a",
+      "chinese_sha256": "57f351f4d469ea9e4901c3acdd262f6d2eae7909d3e086cb739fe11a3071f2a3"
+    },
+    "I": {
+      "chinese_file": "INTRODUCTION_ZH.md",
+      "english_sha256": "97ff00a24efff27a6a52ff8c9e3db18d95c2488d5c88016230b8c190dcd0526d",
+      "chinese_sha256": "fa224b1a21e86d79de93ae94d4d3afc6d61403feca109c52816584c3915b401d"
+    },
+    "II": {
+      "chinese_file": "SECTION_II_ZH.md",
+      "english_sha256": "e9ad974471facfa78ffcd7b02f7300b1b7fbef9be9e39586eeec4f5003330f51",
+      "chinese_sha256": "a9c236fe6a65542509d7fb35854a32f6391fe0a1d9bd4eb4c2574c47d8e911d2"
+    },
+    "III": {
+      "chinese_file": "SECTION_III_ZH.md",
+      "english_sha256": "57fc3a755079a487567c85e011c82ea0f6a72a23c6339c3de3631b591c4ded42",
+      "chinese_sha256": "bd8e7aa87f69c9df0c7bab231022a479b142ca3694cefba04deb4ad1b062c9c3"
+    },
+    "IV": {
+      "chinese_file": "SECTION_IV_ZH.md",
+      "english_sha256": "c69093d35d7457b6e1f11e143e0362e2743cb73ca3a2d4ae63be392923a2ac37",
+      "chinese_sha256": "3282b9335362dccdac84fa7e8b45bb8d2160a5f993ae5b78dab9f3639461a96e"
+    },
+    "V": {
+      "chinese_file": "SECTION_V_ZH.md",
+      "english_sha256": "cea862333663c222e25ef895fd0ecad3e6f299d1c6446f827467be903fe3d0f8",
+      "chinese_sha256": "8e10eafa734bffa91bc2348d67a837c8c64b5210853eabb533a13fcd753f9dd5"
+    },
+    "VI": {
+      "chinese_file": "SECTION_VI_ZH.md",
+      "english_sha256": "ebe3c41ab1e16b76df8362ee0ca215e11b39006d8905386c504484f92ef22170",
+      "chinese_sha256": "4606f1ed2b44799f31b03e258dcb2300156ea94a8f7ae5d821e8d627911c54a4"
+    },
+    "A": {
+      "chinese_file": "APPENDIX_A_ZH.md",
+      "english_sha256": "28ba177ca673b67792d1c63abe0d121f9b1c189f343e42dd73e62ccb47226593",
+      "chinese_sha256": "49fb72ba4936e1f240c7e36abbfb0ec850b356277f0f99f666b35165b91a422f"
+    }
+  }
+}

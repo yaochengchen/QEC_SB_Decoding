@@ -1,0 +1,27 @@
+[
+  {
+    "source": "C:\\code\\codex\\cop\\QEC\\decoding\\QEC_SB_paper1\\QEC_SB_paper1\\paper_draft_v1\\figures\\fig1_decoder_pipeline.png",
+    "copy": "C:\\code\\codex\\cop\\QEC\\decoding\\QEC_SB_paper1\\QEC_SB_paper1\\paper_draft_v1\\latex_release\\figures\\fig1_decoder_pipeline.png",
+    "sha256": "94c87cd6dd11d16defd7c989ec77a8a45d8362f79cd90810aa0b61b7ce29cea4"
+  },
+  {
+    "source": "C:\\code\\codex\\cop\\QEC\\decoding\\QEC_SB_paper1\\QEC_SB_paper1\\paper_draft_v1\\figures\\preview_fig2.png",
+    "copy": "C:\\code\\codex\\cop\\QEC\\decoding\\QEC_SB_paper1\\QEC_SB_paper1\\paper_draft_v1\\latex_release\\figures\\preview_fig2.png",
+    "sha256": "32a57ecc809cc033f9c30601ead7ddb47d8df40b8ddda81db226a1959bbf8627"
+  },
+  {
+    "source": "C:\\code\\codex\\cop\\QEC\\decoding\\QEC_SB_paper1\\QEC_SB_paper1\\paper_draft_v1\\figures\\preview_fig3.png",
+    "copy": "C:\\code\\codex\\cop\\QEC\\decoding\\QEC_SB_paper1\\QEC_SB_paper1\\paper_draft_v1\\latex_release\\figures\\preview_fig3.png",
+    "sha256": "5021a31f8f8ea4d2e9aaa4f57fe9389fbf7593b3c95ccf06457e14a1a88bbc3e"
+  },
+  {
+    "source": "C:\\code\\codex\\cop\\QEC\\decoding\\QEC_SB_paper1\\QEC_SB_paper1\\paper_draft_v1\\figures\\figure4_optimized.png",
+    "copy": "C:\\code\\codex\\cop\\QEC\\decoding\\QEC_SB_paper1\\QEC_SB_paper1\\paper_draft_v1\\latex_release\\figures\\figure4_optimized.png",
+    "sha256": "f5de8dd1166905e9ee3091fc0a8dc9ffa735c1f5e0d02a001770ce08920a91bc"
+  },
+  {
+    "source": "C:\\code\\codex\\cop\\QEC\\decoding\\QEC_SB_paper1\\QEC_SB_paper1\\paper_draft_v1\\figures\\preview_fig5.png",
+    "copy": "C:\\code\\codex\\cop\\QEC\\decoding\\QEC_SB_paper1\\QEC_SB_paper1\\paper_draft_v1\\latex_release\\figures\\preview_fig5.png",
+    "sha256": "9bc7ff3bad689194af137abf4e01624db2c2a91efd5f20e30b080892ee2c8e4e"
+  }
+]

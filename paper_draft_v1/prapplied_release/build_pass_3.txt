@@ -1,0 +1,160 @@
+This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.12) (preloaded format=xelatex.fmt)
+ restricted \write18 enabled.
+entering extended mode
+(manuscript.tex
+LaTeX2e <2025-11-01>
+L3 programming layer <2025-12-24>
+(C:\Users\Lenovo\AppData\Roaming\MiKTeX\tex/latex/revtex\revtex4-2.cls
+Document Class: revtex4-2 2022/06/05 4.2f (https://journals.aps.org/revtex/ for
+ documentation)
+ltxutil[2022/06/05 4.2f utilities package (portions licensed from W. E. Baxter 
+web at superscript.com)]
+ltxfront[2022/06/05 4.2f frontmatter package (AO,DPC,MD)]
+ltxgrid[2022/06/05 4.2f page grid package (portions licensed from W. E. Baxter 
+web at superscript.com)]
+(C:\Users\Lenovo\AppData\Roaming\MiKTeX\tex/latex/revtex\aps4-2.rtx)
+(C:\Users\Lenovo\AppData\Roaming\MiKTeX\tex/latex/revtex\aps10pt4-2.rtx)
+(C:\Users\Lenovo\AppData\Roaming\MiKTeX\tex/latex/textcase\textcase.sty)
+(C:\Program Files\MiKTeX\tex/latex/amsfonts\amssymb.sty
+(C:\Program Files\MiKTeX\tex/latex/amsfonts\amsfonts.sty))
+(C:\Program Files\MiKTeX\tex/latex/amsmath\amsmath.sty
+For additional information on amsmath, use the `?' option.
+(C:\Program Files\MiKTeX\tex/latex/amsmath\amstext.sty
+(C:\Program Files\MiKTeX\tex/latex/amsmath\amsgen.sty))
+(C:\Program Files\MiKTeX\tex/latex/amsmath\amsbsy.sty)
+(C:\Program Files\MiKTeX\tex/latex/amsmath\amsopn.sty))
+(C:\Program Files\MiKTeX\tex/latex/url\url.sty)
+(C:\Users\Lenovo\AppData\Roaming\MiKTeX\tex/latex/natbib\natbib.sty)
+(C:\Users\Lenovo\AppData\Roaming\MiKTeX\tex/latex/revtex\revsymb4-2.sty))
+(C:\Program Files\MiKTeX\tex/latex/fontspec\fontspec.sty
+(C:\Program Files\MiKTeX\tex/latex/l3packages/xparse\xparse.sty
+(C:\Program Files\MiKTeX\tex/latex/l3kernel\expl3.sty
+(C:\Program Files\MiKTeX\tex/latex/l3backend\l3backend-xetex.def)))
+(C:\Program Files\MiKTeX\tex/latex/fontspec\fontspec-xetex.sty
+(C:\Program Files\MiKTeX\tex/latex/base\fontenc.sty)
+(C:\Program Files\MiKTeX\tex/latex/fontspec\fontspec.cfg)))
+(C:\Program Files\MiKTeX\tex/latex/unicode-math\unicode-math.sty
+(C:\Program Files\MiKTeX\tex/latex/unicode-math\unicode-math-xetex.sty
+(C:\Program Files\MiKTeX\tex/latex/l3packages/l3keys2e\l3keys2e.sty)
+(C:\Program Files\MiKTeX\tex/latex/base\fix-cm.sty
+(C:\Program Files\MiKTeX\tex/latex/base\ts1enc.def))
+(C:\Program Files\MiKTeX\tex/latex/unicode-math\unicode-math-table.tex)))
+(C:\Program Files\MiKTeX\tex/latex/graphics\graphicx.sty
+(C:\Program Files\MiKTeX\tex/latex/graphics\keyval.sty)
+(C:\Program Files\MiKTeX\tex/latex/graphics\graphics.sty
+(C:\Program Files\MiKTeX\tex/latex/graphics\trig.sty)
+(C:\Program Files\MiKTeX\tex/latex/graphics-cfg\graphics.cfg)
+(C:\Program Files\MiKTeX\tex/latex/graphics-def\xetex.def)))
+(C:\Users\Lenovo\AppData\Roaming\MiKTeX\tex/latex/booktabs\booktabs.sty)
+(C:\Program Files\MiKTeX\tex/latex/tools\calc.sty)
+(C:\Program Files\MiKTeX\tex/latex/xurl\xurl.sty)
+(C:\Program Files\MiKTeX\tex/latex/hyperref\hyperref.sty
+(C:\Program Files\MiKTeX\tex/generic/iftex\iftex.sty)
+(C:\Users\Lenovo\AppData\Roaming\MiKTeX\tex/latex/kvsetkeys\kvsetkeys.sty)
+(C:\Users\Lenovo\AppData\Roaming\MiKTeX\tex/generic/kvdefinekeys\kvdefinekeys.s
+ty) (C:\Users\Lenovo\AppData\Roaming\MiKTeX\tex/generic/pdfescape\pdfescape.sty
+(C:\Users\Lenovo\AppData\Roaming\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty)
+(C:\Program Files\MiKTeX\tex/generic/pdftexcmds\pdftexcmds.sty
+(C:\Users\Lenovo\AppData\Roaming\MiKTeX\tex/generic/infwarerr\infwarerr.sty)))
+(C:\Users\Lenovo\AppData\Roaming\MiKTeX\tex/latex/hycolor\hycolor.sty)
+(C:\Program Files\MiKTeX\tex/latex/hyperref\nameref.sty
+(C:\Users\Lenovo\AppData\Roaming\MiKTeX\tex/latex/refcount\refcount.sty)
+(C:\Users\Lenovo\AppData\Roaming\MiKTeX\tex/generic/gettitlestring\gettitlestri
+ng.sty
+(C:\Users\Lenovo\AppData\Roaming\MiKTeX\tex/latex/kvoptions\kvoptions.sty))
+
+Package nameref Warning: The definition of \label has changed! 
+(nameref)                Check your packages! 
+(nameref)                Replacing it with the kernel definition on input line 
+149.
+
+) (C:\Program Files\MiKTeX\tex/latex/etoolbox\etoolbox.sty)
+(C:\Users\Lenovo\AppData\Roaming\MiKTeX\tex/generic/stringenc\stringenc.sty)
+(C:\Program Files\MiKTeX\tex/latex/hyperref\pd1enc.def)
+(C:\Users\Lenovo\AppData\Roaming\MiKTeX\tex/generic/intcalc\intcalc.sty)
+(C:\Program Files\MiKTeX\tex/latex/hyperref\puenc.def)
+(C:\Users\Lenovo\AppData\Roaming\MiKTeX\tex/generic/bitset\bitset.sty
+(C:\Users\Lenovo\AppData\Roaming\MiKTeX\tex/generic/bigintcalc\bigintcalc.sty))
+) (C:\Program Files\MiKTeX\tex/latex/hyperref\hxetex.def
+(C:\Users\Lenovo\AppData\Roaming\MiKTeX\tex/latex/rerunfilecheck\rerunfilecheck
+.sty
+(C:\Users\Lenovo\AppData\Roaming\MiKTeX\tex/generic/uniquecounter\uniquecounter
+.sty))) (manuscript.aux) (manuscript.out) (manuscript.out)
+(C:\Program Files\MiKTeX\tex/latex/amsfonts\umsa.fd)
+(C:\Program Files\MiKTeX\tex/latex/amsfonts\umsb.fd)
+Underfull \hbox (badness 1173) in paragraph at lines 50--59
+[]\TU/TimesNewRoman(0)/m/n/10 Quantum error correction is a key ingredient of f
+ault-
+
+Underfull \hbox (badness 1803) in paragraph at lines 68--78
+\TU/TimesNewRoman(0)/m/n/10 probabilities by contraction [[], []]; Markov-chain
+ Monte
+
+Underfull \hbox (badness 5924) in paragraph at lines 79--89
+\TU/TimesNewRoman(0)/m/n/10 inspired optimization. Digital Annealer decoders us
+e
+[1]
+Underfull \hbox (badness 10000) in paragraph at lines 232--237
+[]\TU/TimesNewRoman(0)/m/n/10 The conditional class probability is $[][][] [][]
+ [][]$.
+
+Underfull \hbox (badness 6876) in paragraph at lines 232--237
+\TU/TimesNewRoman(0)/m/n/10 Maximum-likelihood decoding chooses the largest $[]
+[]$,
+[2] [3] [4]
+Underfull \hbox (badness 10000) in paragraph at lines 482--483
+[]\TU/TimesNewRoman(0)/m/n/9 Six distances $[][] [][] [][] [][] [][][] [][]$,ni
+ne noise
+
+Underfull \hbox (badness 2626) in paragraph at lines 583--586
+[]\TU/TimesNewRoman(0)/m/n/10 Each discordant-event probability receives a Clop
+per–
+
+Underfull \hbox (badness 2635) in paragraph at lines 603--610
+\TU/TimesNewRoman(0)/m/n/10 The second counts update rounds when logical classe
+s,
+[5]
+Underfull \hbox (badness 1033) in paragraph at lines 675--684
+[]\TU/TimesNewRoman(0)/m/n/10 The gap at larger code distances raises two quest
+ions:
+[6] [7]
+Underfull \hbox (badness 1308) in paragraph at lines 789--798
+[]\TU/TimesNewRoman(0)/m/n/10 We now compare the resources required for these a
+c-
+[8]
+Underfull \hbox (badness 1137) in paragraph at lines 880--893
+\TU/TimesNewRoman(0)/m/n/10 both a suitable coordinate representation and the l
+ocality
+[9]
+Underfull \hbox (badness 4792) in paragraph at lines 905--922
+[]\TU/TimesNewRoman(0)/m/n/10 We have combined simulated-bifurcation search wit
+h
+
+Underfull \hbox (badness 3635) in paragraph at lines 982--986
+[]\TU/TimesNewRoman(0)/m/n/10 Any multilinear energy can be written as $[][][][
+] []
+[10]
+Underfull \hbox (badness 1082) in paragraph at lines 1106--1109
+ []\TU/TimesNewRoman(0)/m/n/9 O. Higgott, []PyMatching: A Python package for de
+coding
+[11]
+Underfull \hbox (badness 1142) in paragraph at lines 1153--1156
+ []\TU/TimesNewRoman(0)/m/n/9 H. Goto, []Bifurcation-based adiabatic quantum co
+mputation
+
+Underfull \hbox (badness 3460) in paragraph at lines 1185--1189
+ []\TU/TimesNewRoman(0)/m/n/9 H. Goto, R. Hidaka, and K. Tatsumura, []Edge-of-c
+haos-
+
+Underfull \hbox (badness 8075) in paragraph at lines 1201--1204
+ []\TU/TimesNewRoman(0)/m/n/9 Y. Liu, W. Zeng, J. Wu, and L. Lao, []Approximate
+
+
+Underfull \hbox (badness 2401) in paragraph at lines 1201--1204
+ \TU/TimesNewRoman(0)/m/n/9 maximum-likelihood decoding via truncated free ener
+gies[],
+No file manuscript.bbl.
+[12] (manuscript.aux) )
+(see the transcript file for additional information)
+Output written on manuscript.pdf (12 pages).
+Transcript written on manuscript.log.

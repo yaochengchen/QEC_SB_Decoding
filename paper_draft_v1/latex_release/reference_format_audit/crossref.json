@@ -1,0 +1,5705 @@
+{
+  "1": {
+    "doi": "10.1103/RevModPhys.87.307",
+    "title": [
+      "Quantum error correction for quantum memories"
+    ],
+    "authors": [
+      {
+        "given": "Barbara M.",
+        "family": "Terhal",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "journal": [
+      "Reviews of Modern Physics"
+    ],
+    "volume": "87",
+    "page": "307-346",
+    "article-number": null,
+    "published": {
+      "date-parts": [
+        [
+          2015,
+          4,
+          7
+        ]
+      ]
+    }
+  },
+  "2": {
+    "doi": "10.1038/s41586-024-08449-y",
+    "title": [
+      "Quantum error correction below the surface code threshold"
+    ],
+    "authors": [
+      {
+        "name": "Google Quantum AI and Collaborators",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Rajeev",
+        "family": "Acharya",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-2461-0271",
+        "authenticated-orcid": false,
+        "given": "Dmitry A.",
+        "family": "Abanin",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Laleh",
+        "family": "Aghababaie-Beni",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-9096-254X",
+        "authenticated-orcid": false,
+        "given": "Igor",
+        "family": "Aleiner",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-7806-1626",
+        "authenticated-orcid": false,
+        "given": "Trond I.",
+        "family": "Andersen",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0001-8765-5621",
+        "authenticated-orcid": false,
+        "given": "Markus",
+        "family": "Ansmann",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Frank",
+        "family": "Arute",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Kunal",
+        "family": "Arya",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Abraham",
+        "family": "Asfaw",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Nikita",
+        "family": "Astrakhantsev",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Juan",
+        "family": "Atalaya",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0001-6979-9533",
+        "authenticated-orcid": false,
+        "given": "Ryan",
+        "family": "Babbush",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Dave",
+        "family": "Bacon",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Brian",
+        "family": "Ballard",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-6523-6730",
+        "authenticated-orcid": false,
+        "given": "Joseph C.",
+        "family": "Bardin",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0003-3189-9162",
+        "authenticated-orcid": false,
+        "given": "Johannes",
+        "family": "Bausch",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0001-5264-4025",
+        "authenticated-orcid": false,
+        "given": "Andreas",
+        "family": "Bengtsson",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Alexander",
+        "family": "Bilmes",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Sam",
+        "family": "Blackwell",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-1090-7584",
+        "authenticated-orcid": false,
+        "given": "Sergio",
+        "family": "Boixo",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0009-0008-4597-1691",
+        "authenticated-orcid": false,
+        "given": "Gina",
+        "family": "Bortoli",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-8517-7475",
+        "authenticated-orcid": false,
+        "given": "Alexandre",
+        "family": "Bourassa",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Jenna",
+        "family": "Bovaird",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Leon",
+        "family": "Brill",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Michael",
+        "family": "Broughton",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "David A.",
+        "family": "Browne",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Brett",
+        "family": "Buchea",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Bob B.",
+        "family": "Buckley",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "David A.",
+        "family": "Buell",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Tim",
+        "family": "Burger",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0001-8474-6317",
+        "authenticated-orcid": false,
+        "given": "Brian",
+        "family": "Burkett",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Nicholas",
+        "family": "Bushnell",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Anthony",
+        "family": "Cabrera",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Juan",
+        "family": "Campero",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0001-9681-6108",
+        "authenticated-orcid": false,
+        "given": "Hung-Shen",
+        "family": "Chang",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-7473-6745",
+        "authenticated-orcid": false,
+        "given": "Yu",
+        "family": "Chen",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Zijun",
+        "family": "Chen",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Ben",
+        "family": "Chiaro",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Desmond",
+        "family": "Chik",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Charina",
+        "family": "Chou",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-6711-4585",
+        "authenticated-orcid": false,
+        "given": "Jahan",
+        "family": "Claes",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Agnetta Y.",
+        "family": "Cleland",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Josh",
+        "family": "Cogan",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Roberto",
+        "family": "Collins",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Paul",
+        "family": "Conner",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "William",
+        "family": "Courtney",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Alexander L.",
+        "family": "Crook",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-3856-0615",
+        "authenticated-orcid": false,
+        "given": "Ben",
+        "family": "Curtin",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0009-0004-4853-1051",
+        "authenticated-orcid": false,
+        "given": "Sayan",
+        "family": "Das",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0003-4917-5234",
+        "authenticated-orcid": false,
+        "given": "Alex",
+        "family": "Davies",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Laura",
+        "family": "De Lorenzo",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Dripto M.",
+        "family": "Debroy",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0003-3727-7380",
+        "authenticated-orcid": false,
+        "given": "Sean",
+        "family": "Demura",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Michel",
+        "family": "Devoret",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-5174-7310",
+        "authenticated-orcid": false,
+        "given": "Agustin",
+        "family": "Di Paolo",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Paul",
+        "family": "Donohoe",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-8185-1194",
+        "authenticated-orcid": false,
+        "given": "Ilya",
+        "family": "Drozdov",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Andrew",
+        "family": "Dunsworth",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Clint",
+        "family": "Earle",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0009-0004-0473-3727",
+        "authenticated-orcid": false,
+        "given": "Thomas",
+        "family": "Edlich",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Alec",
+        "family": "Eickbusch",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Aviv Moshe",
+        "family": "Elbag",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Mahmoud",
+        "family": "Elzouka",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Catherine",
+        "family": "Erickson",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Lara",
+        "family": "Faoro",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Edward",
+        "family": "Farhi",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Vinicius S.",
+        "family": "Ferreira",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Leslie Flores",
+        "family": "Burgos",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Ebrahim",
+        "family": "Forati",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Austin G.",
+        "family": "Fowler",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-3732-168X",
+        "authenticated-orcid": false,
+        "given": "Brooks",
+        "family": "Foxen",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Suhas",
+        "family": "Ganjam",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Gonzalo",
+        "family": "Garcia",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Robert",
+        "family": "Gasca",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-2226-1813",
+        "authenticated-orcid": false,
+        "given": "Élie",
+        "family": "Genois",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "William",
+        "family": "Giang",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Craig",
+        "family": "Gidney",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Dar",
+        "family": "Gilboa",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-3025-7312",
+        "authenticated-orcid": false,
+        "given": "Raja",
+        "family": "Gosula",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Alejandro Grajales",
+        "family": "Dau",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Dietrich",
+        "family": "Graumann",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-4034-8744",
+        "authenticated-orcid": false,
+        "given": "Alex",
+        "family": "Greene",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0001-7049-6206",
+        "authenticated-orcid": false,
+        "given": "Jonathan A.",
+        "family": "Gross",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0001-9867-2371",
+        "authenticated-orcid": false,
+        "given": "Steve",
+        "family": "Habegger",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "John",
+        "family": "Hall",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Michael C.",
+        "family": "Hamilton",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Monica",
+        "family": "Hansen",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0001-9412-0553",
+        "authenticated-orcid": false,
+        "given": "Matthew P.",
+        "family": "Harrigan",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0003-0521-8378",
+        "authenticated-orcid": false,
+        "given": "Sean D.",
+        "family": "Harrington",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Francisco J. H.",
+        "family": "Heras",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Stephen",
+        "family": "Heslin",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Paula",
+        "family": "Heu",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Oscar",
+        "family": "Higgott",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Gordon",
+        "family": "Hill",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Jeremy",
+        "family": "Hilton",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "George",
+        "family": "Holland",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0001-7421-5635",
+        "authenticated-orcid": false,
+        "given": "Sabrina",
+        "family": "Hong",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Hsin-Yuan",
+        "family": "Huang",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Ashley",
+        "family": "Huff",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0003-2735-1380",
+        "authenticated-orcid": false,
+        "given": "William J.",
+        "family": "Huggins",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Lev B.",
+        "family": "Ioffe",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Sergei V.",
+        "family": "Isakov",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Justin",
+        "family": "Iveland",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Evan",
+        "family": "Jeffrey",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0003-0435-655X",
+        "authenticated-orcid": false,
+        "given": "Zhang",
+        "family": "Jiang",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Cody",
+        "family": "Jones",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Stephen",
+        "family": "Jordan",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Chaitali",
+        "family": "Joshi",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0001-8751-4458",
+        "authenticated-orcid": false,
+        "given": "Pavol",
+        "family": "Juhas",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Dvir",
+        "family": "Kafri",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Hui",
+        "family": "Kang",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0001-7400-9604",
+        "authenticated-orcid": false,
+        "given": "Amir H.",
+        "family": "Karamlou",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-0136-1428",
+        "authenticated-orcid": false,
+        "given": "Kostyantyn",
+        "family": "Kechedzhi",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-2596-2121",
+        "authenticated-orcid": false,
+        "given": "Julian",
+        "family": "Kelly",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Trupti",
+        "family": "Khaire",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Tanuj",
+        "family": "Khattar",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Mostafa",
+        "family": "Khezri",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Seon",
+        "family": "Kim",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-9481-4456",
+        "authenticated-orcid": false,
+        "given": "Paul V.",
+        "family": "Klimov",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Andrey R.",
+        "family": "Klots",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Bryce",
+        "family": "Kobrin",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-7466-7997",
+        "authenticated-orcid": false,
+        "given": "Pushmeet",
+        "family": "Kohli",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Alexander N.",
+        "family": "Korotkov",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Fedor",
+        "family": "Kostritsa",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Robin",
+        "family": "Kothari",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Borislav",
+        "family": "Kozlovskii",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "John Mark",
+        "family": "Kreikebaum",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Vladislav D.",
+        "family": "Kurilovich",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0003-2002-9495",
+        "authenticated-orcid": false,
+        "given": "Nathan",
+        "family": "Lacroix",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0001-9804-2185",
+        "authenticated-orcid": false,
+        "given": "David",
+        "family": "Landhuis",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Tiano",
+        "family": "Lange-Dei",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Brandon W.",
+        "family": "Langley",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Pavel",
+        "family": "Laptev",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Kim-Ming",
+        "family": "Lau",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0003-3110-3371",
+        "authenticated-orcid": false,
+        "given": "Loïck",
+        "family": "Le Guevel",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Justin",
+        "family": "Ledford",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Joonho",
+        "family": "Lee",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Kenny",
+        "family": "Lee",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Yuri D.",
+        "family": "Lensky",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Shannon",
+        "family": "Leon",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-4297-2508",
+        "authenticated-orcid": false,
+        "given": "Brian J.",
+        "family": "Lester",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Wing Yan",
+        "family": "Li",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Yin",
+        "family": "Li",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Alexander T.",
+        "family": "Lill",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Wayne",
+        "family": "Liu",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0001-8399-0975",
+        "authenticated-orcid": false,
+        "given": "William P.",
+        "family": "Livingston",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Aditya",
+        "family": "Locharla",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Erik",
+        "family": "Lucero",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Daniel",
+        "family": "Lundahl",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Aaron",
+        "family": "Lunt",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Sid",
+        "family": "Madhuk",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Fionn D.",
+        "family": "Malone",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Ashley",
+        "family": "Maloney",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-3908-2694",
+        "authenticated-orcid": false,
+        "given": "Salvatore",
+        "family": "Mandrà",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "James",
+        "family": "Manyika",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Leigh S.",
+        "family": "Martin",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Orion",
+        "family": "Martin",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Steven",
+        "family": "Martin",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Cameron",
+        "family": "Maxfield",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-2809-0509",
+        "authenticated-orcid": false,
+        "given": "Jarrod R.",
+        "family": "McClean",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-9544-141X",
+        "authenticated-orcid": false,
+        "given": "Matt",
+        "family": "McEwen",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Seneca",
+        "family": "Meeks",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-6371-6140",
+        "authenticated-orcid": false,
+        "given": "Anthony",
+        "family": "Megrant",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0003-0507-0211",
+        "authenticated-orcid": false,
+        "given": "Xiao",
+        "family": "Mi",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Kevin C.",
+        "family": "Miao",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Amanda",
+        "family": "Mieszala",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Reza",
+        "family": "Molavi",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Sebastian",
+        "family": "Molina",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-7124-4585",
+        "authenticated-orcid": false,
+        "given": "Shirin",
+        "family": "Montazeri",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-9515-6184",
+        "authenticated-orcid": false,
+        "given": "Alexis",
+        "family": "Morvan",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Ramis",
+        "family": "Movassagh",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-8497-6363",
+        "authenticated-orcid": false,
+        "given": "Wojciech",
+        "family": "Mruczkiewicz",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-7760-9186",
+        "authenticated-orcid": false,
+        "given": "Ofer",
+        "family": "Naaman",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-5548-0051",
+        "authenticated-orcid": false,
+        "given": "Matthew",
+        "family": "Neeley",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0001-8509-9836",
+        "authenticated-orcid": false,
+        "given": "Charles",
+        "family": "Neill",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Ani",
+        "family": "Nersisyan",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-9681-6746",
+        "authenticated-orcid": false,
+        "given": "Hartmut",
+        "family": "Neven",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Michael",
+        "family": "Newman",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-7246-6761",
+        "authenticated-orcid": false,
+        "given": "Jiun How",
+        "family": "Ng",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Anthony",
+        "family": "Nguyen",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Murray",
+        "family": "Nguyen",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Chia-Hung",
+        "family": "Ni",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Murphy Yuezhen",
+        "family": "Niu",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-8406-6626",
+        "authenticated-orcid": false,
+        "given": "Thomas E.",
+        "family": "O’Brien",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "William D.",
+        "family": "Oliver",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Alex",
+        "family": "Opremcak",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Kristoffer",
+        "family": "Ottosson",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Andre",
+        "family": "Petukhov",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Alex",
+        "family": "Pizzuto",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "John",
+        "family": "Platt",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Rebecca",
+        "family": "Potter",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Orion",
+        "family": "Pritchard",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Leonid P.",
+        "family": "Pryadko",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Chris",
+        "family": "Quintana",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Ganesh",
+        "family": "Ramachandran",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Matthew J.",
+        "family": "Reagor",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "John",
+        "family": "Redding",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0003-3788-7947",
+        "authenticated-orcid": false,
+        "given": "David M.",
+        "family": "Rhodes",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Gabrielle",
+        "family": "Roberts",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Eliott",
+        "family": "Rosenberg",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Emma",
+        "family": "Rosenfeld",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0003-1917-3879",
+        "authenticated-orcid": false,
+        "given": "Pedram",
+        "family": "Roushan",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0003-3963-1830",
+        "authenticated-orcid": false,
+        "given": "Nicholas C.",
+        "family": "Rubin",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Negar",
+        "family": "Saei",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0001-8188-364X",
+        "authenticated-orcid": false,
+        "given": "Daniel",
+        "family": "Sank",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0001-8930-7081",
+        "authenticated-orcid": false,
+        "given": "Kannan",
+        "family": "Sankaragomathi",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0001-5865-0813",
+        "authenticated-orcid": false,
+        "given": "Kevin J.",
+        "family": "Satzinger",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-3210-5929",
+        "authenticated-orcid": false,
+        "given": "Henry F.",
+        "family": "Schurkus",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Christopher",
+        "family": "Schuster",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-2401-5691",
+        "authenticated-orcid": false,
+        "given": "Andrew W.",
+        "family": "Senior",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Michael J.",
+        "family": "Shearn",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Aaron",
+        "family": "Shorter",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-6035-2812",
+        "authenticated-orcid": false,
+        "given": "Noah",
+        "family": "Shutty",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Vladimir",
+        "family": "Shvarts",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Shraddha",
+        "family": "Singh",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Volodymyr",
+        "family": "Sivak",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Jindra",
+        "family": "Skruzny",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Spencer",
+        "family": "Small",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Vadim",
+        "family": "Smelyanskiy",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "W. Clarke",
+        "family": "Smith",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Rolando D.",
+        "family": "Somma",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Sofia",
+        "family": "Springer",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "George",
+        "family": "Sterling",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Doug",
+        "family": "Strain",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Jordan",
+        "family": "Suchard",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-1127-2111",
+        "authenticated-orcid": false,
+        "given": "Aaron",
+        "family": "Szasz",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Alex",
+        "family": "Sztein",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Douglas",
+        "family": "Thor",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Alfredo",
+        "family": "Torres",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "M. Mert",
+        "family": "Torunbalci",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Abeer",
+        "family": "Vaishnav",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Justin",
+        "family": "Vargas",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Sergey",
+        "family": "Vdovichev",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Guifre",
+        "family": "Vidal",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Benjamin",
+        "family": "Villalonga",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-6513-9885",
+        "authenticated-orcid": false,
+        "given": "Catherine Vollgraff",
+        "family": "Heidweiller",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Steven",
+        "family": "Waltman",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Shannon X.",
+        "family": "Wang",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Brayden",
+        "family": "Ware",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Kate",
+        "family": "Weber",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Travis",
+        "family": "Weidel",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Theodore",
+        "family": "White",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Kristi",
+        "family": "Wong",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-7233-1576",
+        "authenticated-orcid": false,
+        "given": "Bryan W. K.",
+        "family": "Woo",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Cheng",
+        "family": "Xing",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Z. Jamie",
+        "family": "Yao",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0003-0837-1028",
+        "authenticated-orcid": false,
+        "given": "Ping",
+        "family": "Yeh",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Bicheng",
+        "family": "Ying",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Juhwan",
+        "family": "Yoo",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0003-4169-5745",
+        "authenticated-orcid": false,
+        "given": "Noureldin",
+        "family": "Yosri",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Grayson",
+        "family": "Young",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-2585-2424",
+        "authenticated-orcid": false,
+        "given": "Adam",
+        "family": "Zalcman",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Yaxing",
+        "family": "Zhang",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-3037-2003",
+        "authenticated-orcid": false,
+        "given": "Ningfeng",
+        "family": "Zhu",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0003-3146-7263",
+        "authenticated-orcid": false,
+        "given": "Nicholas",
+        "family": "Zobrist",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "journal": [
+      "Nature"
+    ],
+    "volume": "638",
+    "page": "920-926",
+    "article-number": null,
+    "published": {
+      "date-parts": [
+        [
+          2024,
+          12,
+          9
+        ]
+      ]
+    }
+  },
+  "3": {
+    "doi": "10.1038/s41586-025-09848-5",
+    "title": [
+      "A fault-tolerant neutral-atom architecture for universal quantum computation"
+    ],
+    "authors": [
+      {
+        "ORCID": "https://orcid.org/0000-0002-9934-9530",
+        "authenticated-orcid": false,
+        "given": "Dolev",
+        "family": "Bluvstein",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0001-5294-4941",
+        "authenticated-orcid": false,
+        "given": "Alexandra A.",
+        "family": "Geim",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Sophie H.",
+        "family": "Li",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0001-8986-1103",
+        "authenticated-orcid": false,
+        "given": "Simon J.",
+        "family": "Evered",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0001-5518-7907",
+        "authenticated-orcid": false,
+        "given": "J. Pablo",
+        "family": "Bonilla Ataides",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Gefen",
+        "family": "Baranes",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0003-2748-7333",
+        "authenticated-orcid": false,
+        "given": "Andi",
+        "family": "Gu",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0003-3470-1369",
+        "authenticated-orcid": false,
+        "given": "Tom",
+        "family": "Manovitz",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0003-2384-0208",
+        "authenticated-orcid": false,
+        "given": "Muqing",
+        "family": "Xu",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0003-0605-8791",
+        "authenticated-orcid": false,
+        "given": "Marcin",
+        "family": "Kalinowski",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Shayan",
+        "family": "Majidy",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Christian",
+        "family": "Kokail",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0001-5775-9542",
+        "authenticated-orcid": false,
+        "given": "Nishad",
+        "family": "Maskara",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0009-0005-2464-5676",
+        "authenticated-orcid": false,
+        "given": "Elias C.",
+        "family": "Trapp",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0009-0005-7037-5240",
+        "authenticated-orcid": false,
+        "given": "Luke M.",
+        "family": "Stewart",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0003-2773-2554",
+        "authenticated-orcid": false,
+        "given": "Simon",
+        "family": "Hollerith",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Hengyun",
+        "family": "Zhou",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0003-3974-2987",
+        "authenticated-orcid": false,
+        "given": "Michael J.",
+        "family": "Gullans",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0003-1655-9151",
+        "authenticated-orcid": false,
+        "given": "Susanne F.",
+        "family": "Yelin",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-2935-2363",
+        "authenticated-orcid": false,
+        "given": "Markus",
+        "family": "Greiner",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-9786-0538",
+        "authenticated-orcid": false,
+        "given": "Vladan",
+        "family": "Vuletić",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-5298-3112",
+        "authenticated-orcid": false,
+        "given": "Madelyn",
+        "family": "Cain",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-8658-1007",
+        "authenticated-orcid": false,
+        "given": "Mikhail D.",
+        "family": "Lukin",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "journal": [
+      "Nature"
+    ],
+    "volume": "649",
+    "page": "39-46",
+    "article-number": null,
+    "published": {
+      "date-parts": [
+        [
+          2025,
+          11,
+          10
+        ]
+      ]
+    }
+  },
+  "4": {
+    "doi": "10.1038/s41586-024-08148-8",
+    "title": [
+      "Learning high-accuracy error decoding for quantum processors"
+    ],
+    "authors": [
+      {
+        "ORCID": "https://orcid.org/0000-0003-3189-9162",
+        "authenticated-orcid": false,
+        "given": "Johannes",
+        "family": "Bausch",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-2401-5691",
+        "authenticated-orcid": false,
+        "given": "Andrew W.",
+        "family": "Senior",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Francisco J. H.",
+        "family": "Heras",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0009-0004-0473-3727",
+        "authenticated-orcid": false,
+        "given": "Thomas",
+        "family": "Edlich",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0003-4917-5234",
+        "authenticated-orcid": false,
+        "given": "Alex",
+        "family": "Davies",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Michael",
+        "family": "Newman",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Cody",
+        "family": "Jones",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0001-5865-0813",
+        "authenticated-orcid": false,
+        "given": "Kevin",
+        "family": "Satzinger",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Murphy Yuezhen",
+        "family": "Niu",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Sam",
+        "family": "Blackwell",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "George",
+        "family": "Holland",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Dvir",
+        "family": "Kafri",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Juan",
+        "family": "Atalaya",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Craig",
+        "family": "Gidney",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0003-2812-9917",
+        "authenticated-orcid": false,
+        "given": "Demis",
+        "family": "Hassabis",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-1090-7584",
+        "authenticated-orcid": false,
+        "given": "Sergio",
+        "family": "Boixo",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-9681-6746",
+        "authenticated-orcid": false,
+        "given": "Hartmut",
+        "family": "Neven",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-7466-7997",
+        "authenticated-orcid": false,
+        "given": "Pushmeet",
+        "family": "Kohli",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "journal": [
+      "Nature"
+    ],
+    "volume": "635",
+    "page": "834-840",
+    "article-number": null,
+    "published": {
+      "date-parts": [
+        [
+          2024,
+          11,
+          20
+        ]
+      ]
+    }
+  },
+  "5": {
+    "doi": "10.1063/1.1499754",
+    "title": [
+      "Topological quantum memory"
+    ],
+    "authors": [
+      {
+        "given": "Eric",
+        "family": "Dennis",
+        "sequence": "first",
+        "affiliation": [
+          {
+            "name": "Princeton University, Princeton, New Jersey 08544"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Alexei",
+        "family": "Kitaev",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Institute for Quantum Information, California Institute of Technology, Pasadena, California 91125"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Andrew",
+        "family": "Landahl",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Institute for Quantum Information, California Institute of Technology, Pasadena, California 91125"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "John",
+        "family": "Preskill",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Institute for Quantum Information, California Institute of Technology, Pasadena, California 91125"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "journal": [
+      "Journal of Mathematical Physics"
+    ],
+    "volume": "43",
+    "page": "4452-4505",
+    "article-number": null,
+    "published": {
+      "date-parts": [
+        [
+          2002,
+          9,
+          1
+        ]
+      ]
+    }
+  },
+  "6": {
+    "doi": "10.1145/3505637",
+    "title": [
+      "PyMatching: A Python Package for Decoding Quantum Codes with Minimum-Weight Perfect Matching"
+    ],
+    "authors": [
+      {
+        "given": "Oscar",
+        "family": "Higgott",
+        "sequence": "first",
+        "affiliation": [
+          {
+            "name": "Department of Physics &amp; Astronomy, University College London, London, United Kingdom"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "journal": [
+      "ACM Transactions on Quantum Computing"
+    ],
+    "volume": "3",
+    "page": "1-16",
+    "article-number": null,
+    "published": {
+      "date-parts": [
+        [
+          2022,
+          6,
+          30
+        ]
+      ]
+    }
+  },
+  "7": {
+    "doi": "10.1103/PhysRevResearch.2.043423",
+    "title": [
+      "Decoding across the quantum low-density parity-check code landscape"
+    ],
+    "authors": [
+      {
+        "ORCID": "https://orcid.org/0000-0001-9202-1156",
+        "authenticated-orcid": true,
+        "given": "Joschka",
+        "family": "Roffe",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0001-6317-4348",
+        "authenticated-orcid": true,
+        "given": "David R.",
+        "family": "White",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-8932-3492",
+        "authenticated-orcid": true,
+        "given": "Simon",
+        "family": "Burton",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Earl",
+        "family": "Campbell",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "journal": [
+      "Physical Review Research"
+    ],
+    "volume": "2",
+    "page": null,
+    "article-number": "043423",
+    "published": {
+      "date-parts": [
+        [
+          2020,
+          12,
+          28
+        ]
+      ]
+    }
+  },
+  "8": {
+    "doi": "10.1103/PhysRevA.90.032326",
+    "title": [
+      "Efficient algorithms for maximum likelihood decoding in the surface code"
+    ],
+    "authors": [
+      {
+        "given": "Sergey",
+        "family": "Bravyi",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Martin",
+        "family": "Suchara",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Alexander",
+        "family": "Vargo",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "journal": [
+      "Physical Review A"
+    ],
+    "volume": "90",
+    "page": null,
+    "article-number": "032326",
+    "published": {
+      "date-parts": [
+        [
+          2014,
+          9,
+          25
+        ]
+      ]
+    }
+  },
+  "9": null,
+  "10": {
+    "doi": "10.1103/PhysRevA.89.022326",
+    "title": [
+      "Efficient Markov chain Monte Carlo algorithm for the surface code"
+    ],
+    "authors": [
+      {
+        "given": "Adrian",
+        "family": "Hutter",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "James R.",
+        "family": "Wootton",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Daniel",
+        "family": "Loss",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "journal": [
+      "Physical Review A"
+    ],
+    "volume": "89",
+    "page": null,
+    "article-number": "022326",
+    "published": {
+      "date-parts": [
+        [
+          2014,
+          2,
+          18
+        ]
+      ]
+    }
+  },
+  "11": {
+    "doi": "10.3390/e28010091",
+    "title": [
+      "Near-Optimal Decoding Algorithm for Color Codes Using Population Annealing"
+    ],
+    "authors": [
+      {
+        "ORCID": "https://orcid.org/0000-0001-7243-3663",
+        "authenticated-orcid": false,
+        "given": "Fernando",
+        "family": "Martínez-García",
+        "sequence": "first",
+        "affiliation": [
+          {
+            "name": "Instituto de Física Fundamental IFF-CSIC, Calle Serrano 113b, 28006 Madrid, Spain"
+          }
+        ],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "given": "Francisco Revson",
+        "family": "F. Pereira",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "IQM Quantum Computers, Georg-Brauchle-Ring 23-25, 80992 Munich, Germany"
+          }
+        ],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "given": "Pedro",
+        "family": "Parrado-Rodríguez",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "IQM Quantum Computers, P. de la Castellana 200, 28046 Madrid, Spain"
+          }
+        ],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      }
+    ],
+    "journal": [
+      "Entropy"
+    ],
+    "volume": "28",
+    "page": "91",
+    "article-number": null,
+    "published": {
+      "date-parts": [
+        [
+          2026,
+          1,
+          12
+        ]
+      ]
+    }
+  },
+  "12": null,
+  "13": {
+    "doi": "10.1103/PhysRevResearch.4.043086",
+    "title": [
+      "Practical and scalable decoder for topological quantum error correction with an Ising machine"
+    ],
+    "authors": [
+      {
+        "ORCID": "https://orcid.org/0000-0003-4116-9219",
+        "authenticated-orcid": true,
+        "given": "Jun",
+        "family": "Fujisaki",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-6770-0234",
+        "authenticated-orcid": true,
+        "given": "Hirotaka",
+        "family": "Oshima",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Shintaro",
+        "family": "Sato",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Keisuke",
+        "family": "Fujii",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "journal": [
+      "Physical Review Research"
+    ],
+    "volume": "4",
+    "page": null,
+    "article-number": "043086",
+    "published": {
+      "date-parts": [
+        [
+          2022,
+          11,
+          8
+        ]
+      ]
+    }
+  },
+  "14": {
+    "doi": "10.1103/PhysRevResearch.5.043261",
+    "title": [
+      "Quantum error correction with an Ising machine under circuit-level noise"
+    ],
+    "authors": [
+      {
+        "ORCID": "https://orcid.org/0000-0003-4116-9219",
+        "authenticated-orcid": true,
+        "given": "Jun",
+        "family": "Fujisaki",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0009-0009-9766-3735",
+        "authenticated-orcid": true,
+        "given": "Kazunori",
+        "family": "Maruyama",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-6770-0234",
+        "authenticated-orcid": true,
+        "given": "Hirotaka",
+        "family": "Oshima",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Shintaro",
+        "family": "Sato",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Tatsuya",
+        "family": "Sakashita",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Yusaku",
+        "family": "Takeuchi",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Keisuke",
+        "family": "Fujii",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "journal": [
+      "Physical Review Research"
+    ],
+    "volume": "5",
+    "page": null,
+    "article-number": "043261",
+    "published": {
+      "date-parts": [
+        [
+          2023,
+          12,
+          19
+        ]
+      ]
+    }
+  },
+  "15": null,
+  "16": {
+    "doi": "10.1103/PhysRevResearch.6.013092",
+    "title": [
+      "Ising model formulation for highly accurate topological color codes decoding"
+    ],
+    "authors": [
+      {
+        "ORCID": "https://orcid.org/0009-0008-4589-3419",
+        "authenticated-orcid": true,
+        "given": "Yugo",
+        "family": "Takada",
+        "sequence": "first",
+        "affiliation": [
+          {
+            "name": "Graduate School of Engineering Science, Osaka University, 1-3 Machikaneyama, Toyonaka, Osaka 560-8531, Japan"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Yusaku",
+        "family": "Takeuchi",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Graduate School of Engineering Science, Osaka University, 1-3 Machikaneyama, Toyonaka, Osaka 560-8531, Japan"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Keisuke",
+        "family": "Fujii",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Graduate School of Engineering Science, Osaka University, 1-3 Machikaneyama, Toyonaka, Osaka 560-8531, Japan"
+          },
+          {
+            "name": "Center for Quantum Information and Quantum Biology, Osaka University, 1-2 Machikaneyama, Toyonaka 560-0043, Japan"
+          },
+          {
+            "name": "RIKEN Center for Quantum Computing (RQC), Hirosawa 2-1, Wako, Saitama 351-0198, Japan"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "journal": [
+      "Physical Review Research"
+    ],
+    "volume": "6",
+    "page": null,
+    "article-number": "013092",
+    "published": {
+      "date-parts": [
+        [
+          2024,
+          1,
+          24
+        ]
+      ]
+    }
+  },
+  "17": null,
+  "18": {
+    "doi": "10.1103/PhysRevE.58.5355",
+    "title": [
+      "Quantum annealing in the transverse Ising model"
+    ],
+    "authors": [
+      {
+        "given": "Tadashi",
+        "family": "Kadowaki",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Hidetoshi",
+        "family": "Nishimori",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "journal": [
+      "Physical Review E"
+    ],
+    "volume": "58",
+    "page": "5355-5363",
+    "article-number": null,
+    "published": {
+      "date-parts": [
+        [
+          1998,
+          11,
+          1
+        ]
+      ]
+    }
+  },
+  "19": {
+    "doi": "10.1038/srep21686",
+    "title": [
+      "Bifurcation-based adiabatic quantum computation with a nonlinear oscillator network"
+    ],
+    "authors": [
+      {
+        "given": "Hayato",
+        "family": "Goto",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "journal": [
+      "Scientific Reports"
+    ],
+    "volume": "6",
+    "page": null,
+    "article-number": "21686",
+    "published": {
+      "date-parts": [
+        [
+          2016,
+          2,
+          22
+        ]
+      ]
+    }
+  },
+  "20": {
+    "doi": "10.1126/sciadv.aav2372",
+    "title": [
+      "Combinatorial optimization by simulating adiabatic bifurcations in nonlinear Hamiltonian systems"
+    ],
+    "authors": [
+      {
+        "ORCID": "https://orcid.org/0000-0003-1145-6620",
+        "authenticated-orcid": true,
+        "given": "Hayato",
+        "family": "Goto",
+        "sequence": "first",
+        "affiliation": [
+          {
+            "name": "Corporate Research and Development Center, Toshiba Corporation, 1, Komukai-Toshiba-cho, Saiwai-ku, Kawasaki 212-8582, Japan."
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0003-0511-443X",
+        "authenticated-orcid": true,
+        "given": "Kosuke",
+        "family": "Tatsumura",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Corporate Research and Development Center, Toshiba Corporation, 1, Komukai-Toshiba-cho, Saiwai-ku, Kawasaki 212-8582, Japan."
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0001-7628-4052",
+        "authenticated-orcid": true,
+        "given": "Alexander R.",
+        "family": "Dixon",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Corporate Research and Development Center, Toshiba Corporation, 1, Komukai-Toshiba-cho, Saiwai-ku, Kawasaki 212-8582, Japan."
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "journal": [
+      "Science Advances"
+    ],
+    "volume": "5",
+    "page": null,
+    "article-number": "eaav2372",
+    "published": {
+      "date-parts": [
+        [
+          2019,
+          4,
+          5
+        ]
+      ]
+    }
+  },
+  "21": {
+    "doi": "10.1126/sciadv.abe7953",
+    "title": [
+      "High-performance combinatorial optimization based on classical mechanics"
+    ],
+    "authors": [
+      {
+        "ORCID": "https://orcid.org/0000-0003-1145-6620",
+        "authenticated-orcid": true,
+        "given": "Hayato",
+        "family": "Goto",
+        "sequence": "first",
+        "affiliation": [
+          {
+            "name": "Corporate Research and Development Center, Toshiba Corporation, 1 Komukai Toshiba-cho, Saiwai-ku, Kawasaki 212-8582, Japan."
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Kotaro",
+        "family": "Endo",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Software Systems Research and Development Center, Toshiba Digital Solutions Corporation, 72-34 Horikawa-cho, Saiwai-ku, Kawasaki 212-8585, Japan."
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Masaru",
+        "family": "Suzuki",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "ICT Solutions Division, Toshiba Digital Solutions Corporation, 72-34 Horikawa-cho, Saiwai-ku, Kawasaki 212-8585, Japan."
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Yoshisato",
+        "family": "Sakai",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Corporate Research and Development Center, Toshiba Corporation, 1 Komukai Toshiba-cho, Saiwai-ku, Kawasaki 212-8582, Japan."
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0003-3462-8288",
+        "authenticated-orcid": true,
+        "given": "Taro",
+        "family": "Kanao",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Corporate Research and Development Center, Toshiba Corporation, 1 Komukai Toshiba-cho, Saiwai-ku, Kawasaki 212-8582, Japan."
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Yohei",
+        "family": "Hamakawa",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Corporate Research and Development Center, Toshiba Corporation, 1 Komukai Toshiba-cho, Saiwai-ku, Kawasaki 212-8582, Japan."
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Ryo",
+        "family": "Hidaka",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Corporate Research and Development Center, Toshiba Corporation, 1 Komukai Toshiba-cho, Saiwai-ku, Kawasaki 212-8582, Japan."
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0001-7867-9605",
+        "authenticated-orcid": true,
+        "given": "Masaya",
+        "family": "Yamasaki",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Corporate Research and Development Center, Toshiba Corporation, 1 Komukai Toshiba-cho, Saiwai-ku, Kawasaki 212-8582, Japan."
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0003-0511-443X",
+        "authenticated-orcid": true,
+        "given": "Kosuke",
+        "family": "Tatsumura",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Corporate Research and Development Center, Toshiba Corporation, 1 Komukai Toshiba-cho, Saiwai-ku, Kawasaki 212-8582, Japan."
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "journal": [
+      "Science Advances"
+    ],
+    "volume": "7",
+    "page": null,
+    "article-number": "eabe7953",
+    "published": {
+      "date-parts": [
+        [
+          2021,
+          2,
+          5
+        ]
+      ]
+    }
+  },
+  "22": {
+    "doi": "10.1103/qcws-8kgm",
+    "title": [
+      "Toward quantum scaling advantage in approximate optimization"
+    ],
+    "authors": [
+      {
+        "ORCID": "https://orcid.org/0000-0002-3607-2191",
+        "authenticated-orcid": true,
+        "given": "J.",
+        "family": "Pawłowski",
+        "sequence": "first",
+        "affiliation": [
+          {
+            "id": [
+              {
+                "id": "https://ror.org/008fyn775",
+                "id-type": "ROR",
+                "asserted-by": "publisher"
+              }
+            ],
+            "name": "Wrocław University of Science and Technology"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-2229-9184",
+        "authenticated-orcid": true,
+        "given": "P.",
+        "family": "Tarasiuk",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Quantumz.io Sp. z o.o."
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0003-2643-1274",
+        "authenticated-orcid": true,
+        "given": "J.",
+        "family": "Tuziemski",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Quantumz.io Sp. z o.o."
+          },
+          {
+            "id": [
+              {
+                "id": "https://ror.org/011dv8m48",
+                "id-type": "ROR",
+                "asserted-by": "publisher"
+              }
+            ],
+            "name": "University of Gdańsk"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-0476-7132",
+        "authenticated-orcid": true,
+        "given": "Ł.",
+        "family": "Pawela",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "id": [
+              {
+                "id": "https://ror.org/037p52j25",
+                "id-type": "ROR",
+                "asserted-by": "publisher"
+              }
+            ],
+            "name": "Institute of Theoretical and Applied Informatics"
+          },
+          {
+            "name": "Quantumz.io Sp. z o.o."
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-1454-1591",
+        "authenticated-orcid": true,
+        "given": "B.",
+        "family": "Gardas",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "id": [
+              {
+                "id": "https://ror.org/037p52j25",
+                "id-type": "ROR",
+                "asserted-by": "publisher"
+              }
+            ],
+            "name": "Institute of Theoretical and Applied Informatics"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "journal": [
+      "Physical Review Applied"
+    ],
+    "volume": "26",
+    "page": null,
+    "article-number": "014024",
+    "published": {
+      "date-parts": [
+        [
+          2026,
+          7,
+          8
+        ]
+      ]
+    }
+  },
+  "23": {
+    "doi": "10.1109/ACCESS.2024.3374089",
+    "title": [
+      "Efficient and Scalable Architecture for Multiple-Chip Implementation of Simulated Bifurcation Machines"
+    ],
+    "authors": [
+      {
+        "ORCID": "https://orcid.org/0009-0001-6337-7580",
+        "authenticated-orcid": false,
+        "given": "Tomoya",
+        "family": "Kashimata",
+        "sequence": "first",
+        "affiliation": [
+          {
+            "name": "Corporate Research and Development Center, Toshiba Corporation, Kawasaki, Saiwai-ku, Japan"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0001-7867-9605",
+        "authenticated-orcid": false,
+        "given": "Masaya",
+        "family": "Yamasaki",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Corporate Research and Development Center, Toshiba Corporation, Kawasaki, Saiwai-ku, Japan"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0009-0000-0207-6381",
+        "authenticated-orcid": false,
+        "given": "Ryo",
+        "family": "Hidaka",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Corporate Research and Development Center, Toshiba Corporation, Kawasaki, Saiwai-ku, Japan"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0003-0511-443X",
+        "authenticated-orcid": false,
+        "given": "Kosuke",
+        "family": "Tatsumura",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Corporate Research and Development Center, Toshiba Corporation, Kawasaki, Saiwai-ku, Japan"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "journal": [
+      "IEEE Access"
+    ],
+    "volume": "12",
+    "page": "36606-36621",
+    "article-number": null,
+    "published": {
+      "date-parts": [
+        [
+          2024
+        ]
+      ]
+    }
+  },
+  "24": null,
+  "25": {
+    "doi": "10.1038/s41467-026-75119-0",
+    "title": [
+      "Precision meets speed through an FPGA-based natively sparse Ising machine for combinatorial optimization"
+    ],
+    "authors": [
+      {
+        "ORCID": "https://orcid.org/0009-0007-3816-9476",
+        "authenticated-orcid": false,
+        "given": "Baijian",
+        "family": "Yao",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0003-2696-8354",
+        "authenticated-orcid": false,
+        "given": "Daniel",
+        "family": "Ebler",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Xu",
+        "family": "Shi",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Juntao",
+        "family": "Wang",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Fan",
+        "family": "Zhang",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Wei",
+        "family": "Zhang",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0003-2553-1804",
+        "authenticated-orcid": false,
+        "given": "Jie",
+        "family": "Sun",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "journal": [
+      "Nature Communications"
+    ],
+    "volume": "17",
+    "page": null,
+    "article-number": "8549",
+    "published": {
+      "date-parts": [
+        [
+          2026,
+          7,
+          11
+        ]
+      ]
+    }
+  },
+  "26": {
+    "doi": "10.1038/s42005-022-00929-9",
+    "title": [
+      "Simulated bifurcation assisted by thermal fluctuation"
+    ],
+    "authors": [
+      {
+        "ORCID": "https://orcid.org/0000-0003-3462-8288",
+        "authenticated-orcid": false,
+        "given": "Taro",
+        "family": "Kanao",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0003-1145-6620",
+        "authenticated-orcid": false,
+        "given": "Hayato",
+        "family": "Goto",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "journal": [
+      "Communications Physics"
+    ],
+    "volume": "5",
+    "page": null,
+    "article-number": "153",
+    "published": {
+      "date-parts": [
+        [
+          2022,
+          6,
+          14
+        ]
+      ]
+    }
+  },
+  "27": {
+    "doi": "10.1103/2qd9-x6v8",
+    "title": [
+      "Edge-of-chaos-enhanced quantum-inspired algorithm for combinatorial optimization"
+    ],
+    "authors": [
+      {
+        "ORCID": "https://orcid.org/0000-0003-1145-6620",
+        "authenticated-orcid": true,
+        "given": "Hayato",
+        "family": "Goto",
+        "sequence": "first",
+        "affiliation": [
+          {
+            "id": [
+              {
+                "id": "https://ror.org/0326v3z14",
+                "id-type": "ROR",
+                "asserted-by": "publisher"
+              }
+            ],
+            "name": "Toshiba Corporation"
+          },
+          {
+            "id": [
+              {
+                "id": "https://ror.org/02tt21044",
+                "id-type": "ROR",
+                "asserted-by": "publisher"
+              }
+            ],
+            "name": "RIKEN Center for Quantum Computing (RQC)"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0009-0000-0207-6381",
+        "authenticated-orcid": true,
+        "given": "Ryo",
+        "family": "Hidaka",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "id": [
+              {
+                "id": "https://ror.org/0326v3z14",
+                "id-type": "ROR",
+                "asserted-by": "publisher"
+              }
+            ],
+            "name": "Toshiba Corporation"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0003-0511-443X",
+        "authenticated-orcid": true,
+        "given": "Kosuke",
+        "family": "Tatsumura",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "id": [
+              {
+                "id": "https://ror.org/0326v3z14",
+                "id-type": "ROR",
+                "asserted-by": "publisher"
+              }
+            ],
+            "name": "Toshiba Corporation"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "journal": [
+      "Physical Review Applied"
+    ],
+    "volume": "25",
+    "page": null,
+    "article-number": "044011",
+    "published": {
+      "date-parts": [
+        [
+          2026,
+          4,
+          6
+        ]
+      ]
+    }
+  },
+  "28": {
+    "doi": "10.1038/s42005-026-02538-2",
+    "title": [
+      "Tabu-Enhanced Simulated Bifurcation for combinatorial optimization"
+    ],
+    "authors": [
+      {
+        "ORCID": "https://orcid.org/0009-0003-5161-1063",
+        "authenticated-orcid": false,
+        "given": "Xian-Zhe",
+        "family": "Tao",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Qing-Guo",
+        "family": "Zeng",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Zu-Jia",
+        "family": "Huang",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Bo-Wei",
+        "family": "Zuo",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Yong-Qing",
+        "family": "Liu",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-9140-5139",
+        "authenticated-orcid": false,
+        "given": "Jiapei",
+        "family": "Zhuang",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-2548-6567",
+        "authenticated-orcid": false,
+        "given": "Hideki",
+        "family": "Okawa",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0001-7376-435X",
+        "authenticated-orcid": false,
+        "given": "Man-Hong",
+        "family": "Yung",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "journal": [
+      "Communications Physics"
+    ],
+    "volume": "9",
+    "page": null,
+    "article-number": "100",
+    "published": {
+      "date-parts": [
+        [
+          2026,
+          2,
+          10
+        ]
+      ]
+    }
+  },
+  "29": {
+    "doi": "10.35848/1882-0786/acaba9",
+    "title": [
+      "Simulated bifurcation for higher-order cost functions"
+    ],
+    "authors": [
+      {
+        "ORCID": "https://orcid.org/0000-0003-3462-8288",
+        "authenticated-orcid": true,
+        "given": "Taro",
+        "family": "Kanao",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0003-1145-6620",
+        "authenticated-orcid": false,
+        "given": "Hayato",
+        "family": "Goto",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "journal": [
+      "Applied Physics Express"
+    ],
+    "volume": "16",
+    "page": "014501",
+    "article-number": null,
+    "published": {
+      "date-parts": [
+        [
+          2022,
+          12,
+          30
+        ]
+      ]
+    }
+  },
+  "30": null,
+  "31": null,
+  "32": null,
+  "33": null,
+  "34": {
+    "doi": "10.1038/s41586-024-07107-7",
+    "title": [
+      "High-threshold and low-overhead fault-tolerant quantum memory"
+    ],
+    "authors": [
+      {
+        "given": "Sergey",
+        "family": "Bravyi",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0001-9786-8196",
+        "authenticated-orcid": false,
+        "given": "Andrew W.",
+        "family": "Cross",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Jay M.",
+        "family": "Gambetta",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0001-7381-4556",
+        "authenticated-orcid": false,
+        "given": "Dmitri",
+        "family": "Maslov",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Patrick",
+        "family": "Rall",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Theodore J.",
+        "family": "Yoder",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "journal": [
+      "Nature"
+    ],
+    "volume": "627",
+    "page": "778-782",
+    "article-number": null,
+    "published": {
+      "date-parts": [
+        [
+          2024,
+          3,
+          27
+        ]
+      ]
+    }
+  },
+  "35": {
+    "doi": "10.22331/q-2021-07-06-497",
+    "title": [
+      "Stim: a fast stabilizer circuit simulator"
+    ],
+    "authors": [
+      {
+        "given": "Craig",
+        "family": "Gidney",
+        "sequence": "first",
+        "affiliation": [
+          {
+            "name": "Google Inc., Santa Barbara, California 93117, USA"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "journal": [
+      "Quantum"
+    ],
+    "volume": "5",
+    "page": "497",
+    "article-number": "497",
+    "published": {
+      "date-parts": [
+        [
+          2021,
+          7,
+          6
+        ]
+      ]
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "main": "CP_local_SOE_r2",
+  "rule": "Pre-declared rule (fixed before any grid data exist).\n\n    The paper's main decoder is CP-SB + local SOE. Radius 2 replaces radius 1 only if,\n    pooled over all 12,000 confirmation shots, it has strictly fewer failures and the\n    exact paired McNemar test gives p < alpha. Importance / Bennett are ablations and\n    are never eligible as the main method.",
+  "r2_wins": 70,
+  "r2_losses": 40,
+  "exact_p": 0.005447429511444476,
+  "shots": 12000
+}

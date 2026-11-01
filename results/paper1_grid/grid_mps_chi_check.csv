@@ -1,0 +1,55 @@
+d,p,subset,shots,chi16_vs_chi32_disagreements
+3,0.04,all shots,400000,0
+3,0.05,all shots,200000,0
+3,0.06,all shots,100000,0
+3,0.08,all shots,50000,0
+3,0.1,all shots,20000,0
+3,0.12,all shots,20000,0
+3,0.14,all shots,10000,0
+3,0.16,all shots,10000,0
+3,0.18,all shots,10000,0
+5,0.04,all shots,400000,81
+5,0.05,all shots,200000,73
+5,0.06,all shots,100000,67
+5,0.08,all shots,50000,75
+5,0.1,all shots,20000,68
+5,0.12,all shots,20000,120
+5,0.14,all shots,10000,96
+5,0.16,all shots,10000,136
+5,0.18,all shots,10000,188
+7,0.04,all shots,400000,0
+7,0.05,all shots,200000,6
+7,0.06,all shots,100000,4
+7,0.08,all shots,50000,2
+7,0.1,all shots,20000,4
+7,0.12,all shots,20000,20
+7,0.14,all shots,10000,12
+7,0.16,all shots,10000,11
+7,0.18,all shots,10000,28
+9,0.04,all shots,400000,1
+9,0.05,all shots,200000,0
+9,0.06,all shots,100000,0
+9,0.08,all shots,50000,1
+9,0.1,all shots,20000,0
+9,0.12,all shots,20000,0
+9,0.14,all shots,10000,2
+9,0.16,all shots,10000,3
+9,0.18,all shots,10000,7
+11,0.04,"hard shots (823 hard, cap 3000)",823,0
+11,0.05,"hard shots (1023 hard, cap 3000)",1023,0
+11,0.06,"hard shots (2696 hard, cap 3000)",2696,0
+11,0.08,"hard shots (1457 hard, cap 3000)",1457,0
+11,0.1,"hard shots (1555 hard, cap 3000)",1555,0
+11,0.12,"hard shots (3242 hard, cap 3000)",3000,0
+11,0.14,"hard shots (2775 hard, cap 3000)",2775,2
+11,0.16,"hard shots (4160 hard, cap 3000)",3000,0
+11,0.18,"hard shots (5537 hard, cap 3000)",3000,0
+13,0.04,"hard shots (401 hard, cap 3000)",401,0
+13,0.05,"hard shots (555 hard, cap 3000)",555,0
+13,0.06,"hard shots (1689 hard, cap 3000)",1689,0
+13,0.08,"hard shots (1082 hard, cap 3000)",1082,0
+13,0.1,"hard shots (1369 hard, cap 3000)",1369,0
+13,0.12,"hard shots (3229 hard, cap 3000)",3000,0
+13,0.14,"hard shots (2927 hard, cap 3000)",2927,0
+13,0.16,"hard shots (4618 hard, cap 3000)",3000,0
+13,0.18,"hard shots (6212 hard, cap 3000)",3000,2

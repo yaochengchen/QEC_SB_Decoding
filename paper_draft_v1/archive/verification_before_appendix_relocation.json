@@ -1,0 +1,49 @@
+{
+  "original_files_unchanged": 11,
+  "local_links_valid": 33,
+  "main_cells": 54,
+  "main_shots": 7120000,
+  "paired_comparisons": [
+    {
+      "a": "sbR8S400_r2",
+      "b": "sbR32S100_r2",
+      "cells": 15,
+      "wins": 1935,
+      "losses": 1643,
+      "significant": 1
+    },
+    {
+      "a": "sbR8S400_r2",
+      "b": "saC8W100_r2",
+      "cells": 18,
+      "wins": 3169,
+      "losses": 3048,
+      "significant": 0
+    },
+    {
+      "a": "sbR32S400_r2",
+      "b": "saC32W200_r2",
+      "cells": 18,
+      "wins": 1134,
+      "losses": 1200,
+      "significant": 0
+    }
+  ],
+  "references": 35,
+  "introduction_translation_blocks": 9,
+  "citation_registry_consistent": true,
+  "words": 8618,
+  "scope": "Selected numerical and structural checks; not an independent rerun of decoding or a complete bibliography audit.",
+  "extended_consistency": {
+    "formal_translation_sections": 10,
+    "translation_links_valid": 43,
+    "reference_location_index_current": true,
+    "reference_entries_identical": true,
+    "display_math_images_citations_captions_synced": true,
+    "reviewed_version_hashes_current": true,
+    "small_code_max_ratio": 1.1512605042016806,
+    "abstract_ratio_bound": 1.1513,
+    "table_C1_rows_checked_in_each_language": 7,
+    "limitation": "Fingerprints detect later edits; structural checks do not prove semantic translation equivalence."
+  }
+}

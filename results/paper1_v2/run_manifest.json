@@ -1,0 +1,31 @@
+{
+  "env": {
+    "python": "3.11.17",
+    "platform": "Linux-5.15.0-191-generic-x86_64-with-glibc2.35",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "pandas": "3.0.6",
+    "pymatching": "2.4.0",
+    "stim": "1.16.0",
+    "qecsim": "1.0b9",
+    "cpu_count": 512,
+    "frozen_config_sha256": "95f47fbf9ae0f9591400d2af8089ab0e2eb05c9ed54c35b6e3a36804bfd74d10"
+  },
+  "base_seed": 2027101300,
+  "sa_params": {
+    "chains": 8,
+    "sweeps": 100,
+    "temperature_start": 2.0,
+    "temperature_end": 0.05,
+    "restart_modes": [
+      "warm",
+      "random"
+    ]
+  },
+  "sa_seed_offset": 5000011,
+  "chi": [
+    16,
+    32
+  ],
+  "started": "2026-10-17T16:36:30"
+}

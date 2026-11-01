@@ -1,0 +1,20 @@
+{
+  "inputs": {
+    "results_soe_fast/timing_v2_p0.10/timing_budget.csv": "20783bdf0033c1e11b1b485c1e15792a702131ce8d5d4195dceaebbce687e047",
+    "results/paper1_extra_timing_p0.10/timing_budget.csv": "8b6e56da5254e903aadf7cdf75141d0ded001da7952869477e91ea25c6eac759",
+    "results/paper1_extra/budget_ler.csv": "af143ce137fae6481e16a89eecdc0f4ea652c44646c06c183c8d2f1b3d72a099",
+    "results/paper1_grid/grid_ler.csv": "dc66fd8d8cfc83ed9a1ad78bae5e0ca9af080f90b67fba57e1196fb29c6a9f6c",
+    "results/paper1_extra/bposd_corr_ler.csv": "a40002326a6357cf179cc1ca4feb182eb58262f21877b0f331daaf5e9c4a2320"
+  },
+  "protected_files_checked": 307,
+  "protected_unchanged": true,
+  "points": 84,
+  "wilson_intervals_verified": true,
+  "timing_definition": "median of per-syndrome seed+search+SOE sums; 100 unique nontrivial syndromes; per-code preprocessing excluded",
+  "limitations": [
+    "Archived accuracy linked to optimized implementation timing; no new decoding experiment",
+    "Baseline implementation timings retained from original campaign",
+    "No timing confidence intervals; p90 is a percentile, not a CI",
+    "No paired significance or equivalence test against MPS"
+  ]
+}

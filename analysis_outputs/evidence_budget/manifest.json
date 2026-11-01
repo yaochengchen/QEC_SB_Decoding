@@ -1,0 +1,41 @@
+{
+  "inputs": {
+    "results\\paper1_extra\\budget_ler.csv": "af143ce137fae6481e16a89eecdc0f4ea652c44646c06c183c8d2f1b3d72a099",
+    "results_soe_fast\\timing_v2_p0.10\\work_counts.csv": "12bbee2549fa74c10b286f01d9ae7ea57a825c68ae8faaa842cba116bb3b1d0c",
+    "results\\paper1_extra\\budget_paired_matched.csv": "d85f03ce705784c84003d70e76b7b085c01864316e3b5f65a36bca7959da4d69"
+  },
+  "inference": "r2",
+  "shots_per_cell": 10000,
+  "paired_summary": [
+    {
+      "a": "sbR8S400_r2",
+      "b": "sbR32S100_r2",
+      "cells": 15,
+      "a_lower_LER_cells": 9,
+      "holm_significant_cells": 1,
+      "wins": 1935,
+      "losses": 1643
+    },
+    {
+      "a": "sbR8S400_r2",
+      "b": "saC8W100_r2",
+      "cells": 18,
+      "a_lower_LER_cells": 8,
+      "holm_significant_cells": 0,
+      "wins": 3169,
+      "losses": 3048
+    },
+    {
+      "a": "sbR32S400_r2",
+      "b": "saC32W200_r2",
+      "cells": 18,
+      "a_lower_LER_cells": 4,
+      "holm_significant_cells": 0,
+      "wins": 1134,
+      "losses": 1200
+    }
+  ],
+  "resource_y": "LER_over_REF (point estimates; no ratio CI inferred)",
+  "paired_interval": "archived conservative Bonferroni Clopper-Pearson difference; see qec_sb/p5/statistics.py",
+  "holm": "archived families unchanged"
+}

@@ -1,0 +1,22 @@
+2026-10-18 17:23:17  sc3_p0.0030_r3 built: 24 detectors, 219 mechanisms, 0s
+2026-10-18 17:23:20  sc3_p0.0030_r3 t1: dim 194, completions 0, self-decoded max weight 5, 3s (512 workers, full)
+2026-10-18 17:23:20  sc3_p0.0030_r3 done
+2026-10-18 17:23:20  sc5_p0.0030_r5 built: 120 detectors, 1677 mechanisms, 0s
+2026-10-18 17:23:24  sc5_p0.0030_r5 t1: dim 1556, completions 4, self-decoded max weight 5, 4s (512 workers, full)
+2026-10-18 17:23:24  sc5_p0.0030_r5 done
+2026-10-18 17:23:24  sc7_p0.0030_r7 built: 336 detectors, 5471 mechanisms, 0s
+2026-10-18 17:23:37  sc7_p0.0030_r7 t1: dim 5134, completions 6, self-decoded max weight 11, 13s (512 workers, full)
+2026-10-18 17:23:37  sc7_p0.0030_r7 done
+2026-10-18 17:23:38  sc9_p0.0030_r9 built: 720 detectors, 12705 mechanisms, 0s
+2026-10-18 17:24:20  sc9_p0.0030_r9 t1: dim 11984, completions 6, self-decoded max weight 11, 43s (512 workers, full)
+2026-10-18 17:24:20  sc9_p0.0030_r9 done
+2026-10-18 17:24:21  sc11_p0.0030_r11 built: 1320 detectors, 24483 mechanisms, 1s
+2026-10-18 17:35:05  sc11_p0.0030_r11 t1: dim 23162, completions 13, self-decoded max weight 9, 644s (96 workers, full)
+2026-10-18 17:35:05  sc11_p0.0030_r11 done
+2026-10-18 17:35:06  sc13_p0.0030_r13 built: 2184 detectors, 41909 mechanisms, 1s
+2026-10-18 18:27:13  sc13_p0.0030_r13 t1: dim 39724, completions 14, self-decoded max weight 11, 3127s (96 workers, full)
+2026-10-18 18:27:13  sc13_p0.0030_r13 done
+2026-10-18 18:27:14  bb72B_p0.0030_r6 built: 432 detectors, 16164 mechanisms, 1s
+2026-10-18 18:31:00  bb72B_p0.0030_r6 t1: dim 15726, completions 261, self-decoded max weight 16, 226s (96 workers, fast)
+2026-10-18 18:31:01  bb72B_p0.0030_r6 done
+2026-10-18 18:31:01  summary -> results/circuit_locality/summary

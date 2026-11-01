@@ -1,0 +1,9 @@
+{
+  "pages": 12,
+  "main_figures": 5,
+  "references": 33,
+  "appendices_in_main": ["A"],
+  "supplemental_material": "../SUPPLEMENTAL_MATERIAL.pdf",
+  "public_archive_link_status": "pending",
+  "note": "Built from the current MANUSCRIPT.md; translation fingerprints await human review."
+}

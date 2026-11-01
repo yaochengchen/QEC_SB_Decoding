@@ -1,0 +1,35 @@
+{
+  "pages": 16,
+  "math_entries_identical": 207,
+  "equation_numbers": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+    "A1",
+    "A2"
+  ],
+  "references_unchanged": 32,
+  "citation_links": 36,
+  "figure_table_crossref_links": 8,
+  "figures_unchanged": 5,
+  "figure_pages": {
+    "1": 3,
+    "2": 8,
+    "3": 9,
+    "4": 10,
+    "5": 11
+  },
+  "original_paper_files_unchanged": 11,
+  "overfull_or_unresolved_reference_warnings": 0,
+  "underfull_line_warnings": 1,
+  "manuscript_sha256": "9158b4c7c57dd04934b9615c71ad23c6ee58ad9cb1d93e845a432ca3c8830a1b",
+  "pdf_sha256": "2c8bc588162dd55a35cdc0b52b64072df267533ea9b59250119002d3c8d9667f",
+  "scope": "Conversion/numbering/layout checks; no new experiments or external bibliography audit."
+}
